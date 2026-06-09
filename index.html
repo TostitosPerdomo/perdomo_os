@@ -25,10 +25,7 @@
   .two-col .card { margin-bottom:0; }
   @media(max-width:520px){.two-col{grid-template-columns:1fr;}}
   .workout-name { font-size:1rem; font-weight:bold; margin-bottom:12px; }
-  .exercise-list { list-style:none; }
-  .exercise-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid #EBE3D5; font-size:0.85rem; }
-  .exercise-row:last-child { border-bottom:none; }
-  .ex-sets { font-family:system-ui,sans-serif; font-size:0.75rem; color:#7D6E5A; background:#F7F2E9; padding:2px 8px; border-radius:6px; }
+  .no-session-note { font-family:system-ui,sans-serif; font-size:0.8rem; color:#9C845F; font-style:italic; }
   .bar-row { margin-bottom:13px; }
   .bar-row:last-child { margin-bottom:0; }
   .bar-header { display:flex; justify-content:space-between; margin-bottom:6px; }
@@ -56,8 +53,6 @@
   <div class="header-os">PERDOMO <span>OS</span></div>
   <div class="header-date">Tuesday · 09 Jun 2026</div>
 </div>
-
-<!-- RECOVERY -->
 <div class="card">
   <div class="card-label">Recovery</div>
   <div class="recovery-layout">
@@ -65,36 +60,25 @@
       <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#EBE3D5" stroke-width="11" stroke-linecap="round"/>
       <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#D4713A" stroke-width="11" stroke-linecap="round"
             stroke-dasharray="0 189"/>
-      <text x="70" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="26" font-weight="bold" fill="#B0A090">—</text>
+      <text x="70" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#9C845F">—</text>
       <text x="70" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#9C845F" letter-spacing="2">SCORE</text>
       <text x="10" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#B0A090">0</text>
       <text x="130" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#B0A090">100</text>
     </svg>
     <div class="recovery-chips">
-      <div class="chip"><div class="chip-label">HRV</div><div class="chip-value" style="color:#B0A090;">—<span class="chip-unit">ms</span></div></div>
-      <div class="chip"><div class="chip-label">Sleep</div><div class="chip-value" style="color:#B0A090;">—<span class="chip-unit">h</span></div></div>
-      <div class="chip"><div class="chip-label">Strain</div><div class="chip-value" style="color:#B0A090;">—</div></div>
-      <div class="chip"><div class="chip-label">Resting HR</div><div class="chip-value" style="color:#B0A090;">—<span class="chip-unit">bpm</span></div></div>
+      <div class="chip"><div class="chip-label">HRV</div><div class="chip-value">—<span class="chip-unit">ms</span></div></div>
+      <div class="chip"><div class="chip-label">Sleep</div><div class="chip-value">—<span class="chip-unit">h</span></div></div>
+      <div class="chip"><div class="chip-label">Strain</div><div class="chip-value">6.2</div></div>
+      <div class="chip"><div class="chip-label">Resting HR</div><div class="chip-value">—<span class="chip-unit">bpm</span></div></div>
     </div>
   </div>
-  <div class="whoop-flag">⚠ No Whoop file for today — using data from 2026-06-08 (recovery metrics not synced)</div>
+  <div class="whoop-flag">⚠ Recovery metrics not yet synced for today — file present but contains body measurement + cycle data only. Strain (6.2) is from yesterday's cycle (2026-06-08).</div>
 </div>
-
-<!-- TRAINING + NUTRITION -->
 <div class="two-col">
   <div class="card">
     <div class="card-label">Today's Training</div>
     <div class="workout-name">No Session Logged</div>
-    <ul class="exercise-list">
-      <li class="exercise-row">
-        <span class="ex-name" style="color:#D4713A;font-weight:600;">⚠ 5 days — no session on record</span>
-        <span class="ex-sets" style="color:#D4713A;">DRIFT</span>
-      </li>
-      <li class="exercise-row">
-        <span class="ex-name" style="font-size:0.78rem;color:#7D6E5A;">Suggested: Push — bench, OHP, dips</span>
-        <span class="ex-sets">First session</span>
-      </li>
-    </ul>
+    <p class="no-session-note">No lifting sessions on record since system start (2026-06-04). Log your first session today via Task B (night_input.md).</p>
   </div>
   <div class="card">
     <div class="card-label">Nutrition</div>
@@ -110,11 +94,9 @@
       <div class="bar-header"><span class="bar-name">Calories</span><span class="bar-val">— / —</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#D4713A;"></div></div>
     </div>
-    <div class="nutrition-note">Meal plan not yet generated — add 6 recipes to recipe_database.md</div>
+    <div class="nutrition-note">Meal plan blocked — add 6 recipes to recipe_database.md to unlock Task C.</div>
   </div>
 </div>
-
-<!-- COGNITIVE + DRIFT -->
 <div class="two-col">
   <div class="card">
     <div class="card-label">Cognitive Dev</div>
@@ -123,7 +105,6 @@
     <div class="bar-track"><div class="bar-fill" style="width:30%;background:#4F7BA8;"></div></div>
     <div class="fok-bar-labels"><span>Day 1</span><span>30%</span><span>Day 30</span></div>
     <div class="essay-pill">📝 Essay due in 21 days · 30 Jun</div>
-    <div style="margin-top:10px;font-family:system-ui,sans-serif;font-size:0.7rem;color:#D4713A;font-weight:600;">⚠ MILESTONE 1 DUE TOMORROW — wiki incomplete · 0h logged</div>
   </div>
   <div class="card">
     <div class="card-label">Drift Check</div>
@@ -143,27 +124,25 @@
         </div>
       </div>
       <div class="drift-item">
-        <div class="drift-dot" style="background:#5D9464;"></div>
+        <div class="drift-dot" style="background:#9C845F;"></div>
         <div>
           <div class="drift-label">Nutrition</div>
-          <div class="drift-status" style="color:#5D9464;">ON TRACK</div>
+          <div class="drift-status" style="color:#9C845F;">NO DATA</div>
         </div>
       </div>
       <div class="drift-item">
-        <div class="drift-dot" style="background:#B0A090;"></div>
+        <div class="drift-dot" style="background:#9C845F;"></div>
         <div>
           <div class="drift-label">Sleep</div>
-          <div class="drift-status" style="color:#B0A090;">NO DATA</div>
+          <div class="drift-status" style="color:#9C845F;">NO DATA</div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- FOCUS -->
 <div class="card focus-card">
   <div class="card-label">Today's Focus</div>
-  <div class="focus-text">"Start today: one gym session and one FoK study hour — the drift clock is already running."</div>
+  <div class="focus-text">"Complete at least one wiki block and log your first gym session — the wiki is due tomorrow and the system has had no performance data for 5 days."</div>
 </div>
 <div class="timestamp">Generated Tuesday 09 Jun · 09:15</div>
 </body>
