@@ -49,7 +49,7 @@
   .flag-row{font-family:system-ui,sans-serif;font-size:.72rem;color:#C4723A;margin-top:10px;padding:8px 10px;background:#FEF4EC;border-radius:8px;border-left:3px solid #D4713A}
   .event-row{display:flex;gap:12px;padding:7px 0;border-bottom:1px solid #EBE3D5;font-size:.82rem}
   .event-row:last-child{border-bottom:none}
-  .event-date{font-family:system-ui,sans-serif;font-size:.68rem;color:#9C845F;min-width:60px;padding-top:2px}
+  .event-date{font-family:system-ui,sans-serif;font-size:.68rem;color:#9C845F;min-width:60px;padding-top:2px;text-align:right}
   .event-type{font-family:system-ui,sans-serif;font-size:.6rem;background:#F0E8DC;color:#9C845F;padding:1px 6px;border-radius:4px;display:inline-block;margin-top:3px}
   .drift-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
   .drift-item{display:flex;align-items:center;gap:9px;background:#F7F2E9;border-radius:9px;padding:9px 11px}
@@ -63,7 +63,8 @@
   .focus-card{border-left:3px solid #D4713A}
   .focus-text{font-size:.95rem;line-height:1.7;font-style:italic}
   .timestamp{text-align:right;font-family:system-ui,sans-serif;font-size:.65rem;color:#B0A090;margin-top:6px}
-  .readiness-banner{font-family:system-ui,sans-serif;font-size:.75rem;margin-top:12px;padding:8px 12px;background:#EAF3EA;border-radius:8px;border-left:3px solid #5D9464}
+  .milestone-row{font-family:system-ui,sans-serif;font-size:.72rem;margin-top:8px}
+  .urgent-pill{display:inline-block;background:#FEF4EC;border:1px solid #D4713A;color:#C4723A;font-family:system-ui,sans-serif;font-size:.6rem;padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:600}
 </style>
 </head>
 <body>
@@ -79,7 +80,7 @@
   <div class="recovery-layout">
     <svg viewBox="0 0 140 90" width="140" height="90">
       <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#EBE3D5" stroke-width="11" stroke-linecap="round"/>
-      <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#5D9464" stroke-width="11" stroke-linecap="round" stroke-dasharray="172 189"/>
+      <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#D4713A" stroke-width="11" stroke-linecap="round" stroke-dasharray="172 189"/>
       <text x="70" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#2D2416">91</text>
       <text x="70" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#9C845F" letter-spacing="2">SCORE</text>
       <text x="10" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#B0A090">0</text>
@@ -88,14 +89,14 @@
     <div class="recovery-chips">
       <div class="chip"><div class="chip-label">HRV</div><div class="chip-value chip-small">115.7<span class="chip-unit">ms</span></div></div>
       <div class="chip"><div class="chip-label">Resting HR</div><div class="chip-value chip-small">48<span class="chip-unit">bpm</span></div></div>
-      <div class="chip"><div class="chip-label">Strain (prev)</div><div class="chip-value chip-small">14.86<span class="chip-unit" style="font-size:.6rem;display:block">Z1:22m Z2:9m Z3:13m Z4:14m</span></div></div>
-      <div class="chip"><div class="chip-label">Sleep 78%</div><div class="chip-value chip-small">5.75<span class="chip-unit">h</span></div></div>
+      <div class="chip"><div class="chip-label">Strain</div><div class="chip-value chip-small">14.9</div></div>
+      <div class="chip"><div class="chip-label">Sleep · 78%</div><div class="chip-value chip-small">5h 45m</div></div>
       <div class="chip"><div class="chip-label">Resp. Rate</div><div class="chip-value chip-small">13.7<span class="chip-unit">br/min</span></div></div>
-      <div class="chip"><div class="chip-label">HRV 7-day avg</div><div class="chip-value chip-small" style="font-size:.8rem;color:#9C845F">— (Day 2)</div></div>
+      <div class="chip"><div class="chip-label">Efficiency</div><div class="chip-value chip-small">91<span class="chip-unit">%</span></div></div>
     </div>
   </div>
-  <div class="readiness-banner">
-    <strong>🟢 GREEN</strong> — Heavy session recommended. Calorie target: <strong>2,650 kcal</strong>. Sleep performance at 78% (5.75h vs 8.03h needed — 2.3h deficit).
+  <div style="font-family:system-ui,sans-serif;font-size:.75rem;margin-top:12px;padding:8px 12px;background:#EAF4EC;border-radius:8px;border-left:3px solid #5D9464">
+    <strong style="color:#5D9464">GREEN</strong> — Heavy session today. Calorie target: 2,650 kcal. Sleep was short (5.75h vs 8.03h needed) — recovery strong despite it.
   </div>
 </div>
 
@@ -103,11 +104,11 @@
 <div class="two-col">
   <div class="card">
     <div class="card-label">Today's Training</div>
-    <div class="workout-name">Last: Conditioning — 40-min Run</div>
+    <div class="workout-name">Conditioning — 40 min Run</div>
     <ul class="exercise-list">
-      <li class="exercise-row"><span>Run (steady-state)</span><span class="ex-sets">~40 min</span></li>
+      <li class="exercise-row"><span>Steady-state run</span><span class="ex-sets">~40 min</span></li>
     </ul>
-    <div class="note">GREEN recovery — first strength session today. No counted sets yet this week.</div>
+    <div class="note">Last session: 2026-06-09. Green recovery today — ideal to log first strength session and set baselines.</div>
     <div class="streak"><span>7-day lifting (Mon–Sun)</span>○ ● ○ ○ ○ ○ ○</div>
     <div class="note" style="margin-top:6px">Week: 0 sets logged (conditioning only)</div>
   </div>
@@ -125,20 +126,20 @@
       <div class="bar-header"><span class="bar-name">Calories</span><span class="bar-val">0 / 2,650</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#D4713A"></div></div>
     </div>
-    <div class="note">No nutrition logged. Meal plan blocked — add 6+ recipes to unlock Task C.</div>
+    <div class="note">No nutrition data logged. Meal plan blocked — needs 6+ recipes in recipe_database.md.</div>
   </div>
 </div>
 
 <!-- SUPPLEMENTS -->
 <div class="card">
-  <div class="card-label">Supplements · Creatine: MAINTENANCE · Phase start date not set</div>
-  <div class="supp-row"><span>Creatine 5g</span><span class="supp-status">✅ Taken (Jun 9)</span></div>
-  <div class="supp-row"><span>B12 1000mcg</span><span class="supp-status">⬜ Pending</span></div>
-  <div class="supp-row"><span>Omega-3 2–3g</span><span class="supp-status">✅ Taken (Jun 9)</span></div>
-  <div class="supp-row"><span>D3 + K2</span><span class="supp-status">⬜ Pending</span></div>
-  <div class="supp-row"><span>L-Lysine 1000mg</span><span class="supp-status">⬜ Pending</span></div>
-  <div class="supp-row"><span>Zinc 15mg</span><span class="supp-status">✅ Taken (Jun 9)</span></div>
-  <div class="flag-row">⚠ T1: Take creatine post-workout today for optimal muscle uptake.</div>
+  <div class="card-label">Supplements · Creatine: MAINTENANCE · Phase start not logged</div>
+  <div class="supp-row"><span>Creatine 5g — post-workout / morning</span><span class="supp-status">✅</span></div>
+  <div class="supp-row"><span>B12 1000mcg — morning with breakfast</span><span class="supp-status">⬜ Pending</span></div>
+  <div class="supp-row"><span>Omega-3 2–3g — with largest meal</span><span class="supp-status">✅</span></div>
+  <div class="supp-row"><span>D3 + K2 — with largest meal</span><span class="supp-status">⬜ Pending</span></div>
+  <div class="supp-row"><span>L-Lysine 1000mg — with protein meal</span><span class="supp-status">⬜ Pending</span></div>
+  <div class="supp-row"><span>Zinc 15mg — before bed with food</span><span class="supp-status">✅</span></div>
+  <div class="flag-row">⚠ T1: Take creatine post-workout today.</div>
   <div class="flag-row">⚠ C1: B12 not yet logged — supports nerve conduction and cognitive energy. Take before your study session.</div>
 </div>
 
@@ -147,30 +148,30 @@
   <div class="card">
     <div class="card-label">Cognitive Dev</div>
     <div class="fok-name">Investing &amp; Long-Term Wealth</div>
-    <div class="fok-sub">June FoK · Day 10 of 30</div>
+    <div class="fok-sub">June 2026 FoK · Day 10 of 30</div>
     <div class="bar-track"><div class="bar-fill" style="width:33%;background:#4F7BA8"></div></div>
     <div class="fok-bar-labels"><span>Day 1</span><span>33%</span><span>Day 30</span></div>
     <div class="essay-pill">📝 Essay due in 20 days · 30 Jun 2026</div>
-    <div style="font-family:system-ui,sans-serif;font-size:.72rem;margin-top:8px;color:#D4713A">⬜ M1: Wiki complete (all 7 blocks) · <strong>TODAY</strong></div>
-    <div style="font-family:system-ui,sans-serif;font-size:.72rem;margin-top:4px;color:#7D6E5A">⬜ M2: Core concepts self-test · 17 Jun</div>
-    <div style="font-family:system-ui,sans-serif;font-size:.72rem;margin-top:4px;color:#7D6E5A">⬜ M3: Essay draft (1,500+ words) · 24 Jun</div>
-    <div style="font-family:system-ui,sans-serif;font-size:.72rem;margin-top:4px;color:#7D6E5A">⬜ M4: Final essay filed · 30 Jun</div>
-    <div class="streak" style="margin-top:12px"><span>7-day study</span>○ ○ ○ ○ ○ ○ ○</div>
+    <div class="milestone-row" style="color:#D4713A">⬜ M1: Wiki complete (all 7 blocks) · <strong>Today</strong><span class="urgent-pill">URGENT</span></div>
+    <div class="milestone-row" style="color:#7D6E5A">⬜ M2: Core concepts self-test · 17 Jun</div>
+    <div class="milestone-row" style="color:#7D6E5A">⬜ M3: Essay draft 1,500+ words · 24 Jun</div>
+    <div class="milestone-row" style="color:#7D6E5A">⬜ M4: Final essay filed · 30 Jun</div>
+    <div class="streak" style="margin-top:12px"><span>7-day study (Mon–Sun)</span>○ ○ ○ ○ ○ ○ ○</div>
     <div class="note">0h logged / 15h target</div>
   </div>
   <div class="card">
     <div class="card-label">Upcoming (7 days)</div>
     <div class="event-row">
       <div>
-        <div style="font-weight:bold">FoK M1 — Wiki complete</div>
+        <div>FoK M1 Due: Wiki complete</div>
         <div class="event-type">FoK</div>
-        <div style="font-family:system-ui,sans-serif;font-size:.65rem;color:#D4713A;margin-top:2px">URGENT — 0/7 blocks done</div>
+        <div style="font-family:system-ui,sans-serif;font-size:.65rem;color:#C4723A;margin-top:2px;font-weight:600">URGENT — 0/7 blocks done</div>
       </div>
       <div class="event-date">10 Jun<br>Today</div>
     </div>
     <div class="event-row">
       <div>
-        <div>FoK M2 — Core concepts self-test</div>
+        <div>FoK M2 Due: Core concepts self-test</div>
         <div class="event-type">FoK</div>
         <div style="font-family:system-ui,sans-serif;font-size:.65rem;color:#9C845F;margin-top:2px">Compound interest, index funds, asset classes, risk</div>
       </div>
@@ -217,9 +218,9 @@
   <div class="card">
     <div class="card-label">Cross-Strand</div>
     <div class="cross-strand">
-      <div class="cs-item"><span class="cs-arrow">→</span>Recovery 91 + M1 due today = highest-leverage window of the week. Wiki first.</div>
-      <div class="cs-item"><span class="cs-arrow">→</span>Sleep 5.75h vs 8.03h needed = 2.3h deficit. Two nights compounds into HRV drop. Earlier bedtime tonight.</div>
-      <div class="cs-item"><span class="cs-arrow">→</span>3/6 supplements missed (B12, D3+K2, L-Lysine). 50% adherence Day 2 — establish evening stack habit today.</div>
+      <div class="cs-item"><span class="cs-arrow">→</span>Recovery 91 + M1 due today = highest-leverage window of the week. 0 study hours, 20 days to deadline. Open the wiki now.</div>
+      <div class="cs-item"><span class="cs-arrow">→</span>Sleep 5.75h vs 8.03h needed (−2.3h). High recovery despite short sleep — one more short night will compound. Earlier bedtime tonight.</div>
+      <div class="cs-item"><span class="cs-arrow">→</span>3/6 supplements unlogged (B12, D3+K2, L-Lysine). Establish the evening stack today — it takes 60 seconds and is not logged yet.</div>
     </div>
   </div>
 </div>
@@ -227,10 +228,10 @@
 <!-- FOCUS -->
 <div class="card focus-card">
   <div class="card-label">Today's Focus</div>
-  <div class="focus-text">"Write the wiki before you train. Recovery is 91, Milestone 1 is due today, 0 study hours banked. Take B12 now, open the wiki, train after."</div>
+  <div class="focus-text">"Write the wiki before you train. Recovery is 91, Milestone 1 is due today, 0 study hours logged. Take B12 now. Open the wiki. Fill all 7 blocks. Close it."</div>
 </div>
 
-<div class="timestamp">Generated Wednesday 10 Jun · 09:15 · Last journal: "Worked on university applications and finally got Perdomo_OS working. Very exciting stuff…"</div>
+<div class="timestamp">Generated Wednesday 10 Jun · 09:15 · Last journal: "Worked on university applications and finally got Perdomo_OS working. Very exciting s…"</div>
 
 </body>
 </html>
