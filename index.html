@@ -39,18 +39,17 @@
   .note{font-family:system-ui,sans-serif;font-size:.7rem;color:#9C845F;margin-top:12px;font-style:italic}
   .fok-name{font-size:1rem;font-weight:bold;margin-bottom:3px}
   .fok-sub{font-family:system-ui,sans-serif;font-size:.75rem;color:#7D6E5A;margin-bottom:12px}
-  .fok-bar-labels{display:flex;justify-content:space-between;font-family:system-ui,sans-serif;font-size:.62rem;color:#9C845F;margin-top:5px}
-  .essay-pill{display:inline-block;margin-top:13px;background:#EDF3F9;border:1px solid #B8CCE0;color:#4F7BA8;font-family:system-ui,sans-serif;font-size:.7rem;padding:4px 10px;border-radius:20px}
-  .overdue-pill{display:inline-block;margin-top:6px;background:#FEF4EC;border:1px solid #D4713A;color:#C4723A;font-family:system-ui,sans-serif;font-size:.7rem;padding:4px 10px;border-radius:20px}
   .streak{font-family:system-ui,sans-serif;font-size:.9rem;letter-spacing:.08em;margin-top:10px}
   .streak span{color:#9C845F;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:3px}
   .supp-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #EBE3D5;font-size:.82rem}
   .supp-row:last-child{border-bottom:none}
   .supp-status{font-size:.9rem}
+  .flag-row{font-family:system-ui,sans-serif;font-size:.72rem;color:#C4723A;margin-top:10px;padding:8px 10px;background:#FEF4EC;border-radius:8px;border-left:3px solid #D4713A}
   .event-row{display:flex;gap:12px;padding:7px 0;border-bottom:1px solid #EBE3D5;font-size:.82rem}
   .event-row:last-child{border-bottom:none}
-  .event-date{font-family:system-ui,sans-serif;font-size:.68rem;color:#9C845F;min-width:60px;padding-top:2px}
+  .event-date{font-family:system-ui,sans-serif;font-size:.68rem;color:#9C845F;min-width:60px;padding-top:2px;text-align:right}
   .event-type{font-family:system-ui,sans-serif;font-size:.6rem;background:#F0E8DC;color:#9C845F;padding:1px 6px;border-radius:4px;display:inline-block;margin-top:3px}
+  .event-urgent{font-family:system-ui,sans-serif;font-size:.6rem;background:#FEF4EC;color:#C4723A;padding:1px 6px;border-radius:4px;display:inline-block;margin-top:3px;font-weight:700}
   .drift-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
   .drift-item{display:flex;align-items:center;gap:9px;background:#F7F2E9;border-radius:9px;padding:9px 11px}
   .drift-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
@@ -62,117 +61,134 @@
   .cs-arrow{color:#D4713A;margin-right:6px}
   .focus-card{border-left:3px solid #D4713A}
   .focus-text{font-size:.95rem;line-height:1.7;font-style:italic}
+  .priority-banner{background:#FEF4EC;border:1px solid #E8C4A0;border-left:4px solid #C4723A;border-radius:10px;padding:14px 16px;margin-bottom:14px}
+  .priority-banner-label{font-family:system-ui,sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C4723A;margin-bottom:8px}
+  .priority-item{font-family:system-ui,sans-serif;font-size:.8rem;color:#2D2416;padding:5px 0;border-bottom:1px solid #F0D8C8}
+  .priority-item:last-child{border-bottom:none}
+  .priority-tag{font-size:.65rem;background:#C4723A;color:#fff;padding:1px 6px;border-radius:4px;margin-right:6px;font-weight:700}
   .timestamp{text-align:right;font-family:system-ui,sans-serif;font-size:.65rem;color:#B0A090;margin-top:6px}
-  .milestone-row{font-family:system-ui,sans-serif;font-size:.72rem;margin-top:8px}
-  .readiness-bar{font-family:system-ui,sans-serif;font-size:.75rem;margin-top:12px;padding:8px 12px;background:#F0E8DC;border-radius:8px}
-  .sync-note{font-family:system-ui,sans-serif;font-size:.65rem;color:#9C845F;font-style:italic;margin-top:8px}
+  .section-divider{font-family:system-ui,sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#B0A090;margin:10px 0 6px}
+  .warning-note{font-family:system-ui,sans-serif;font-size:.7rem;color:#C4723A;margin-bottom:10px;padding:6px 10px;background:#FEF4EC;border-radius:6px}
 </style>
 </head>
 <body>
 
 <div class="header">
   <div class="header-os">PERDOMO <span>OS</span></div>
-  <div class="header-date">Thursday · 11 Jun 2026</div>
+  <div class="header-date">Tuesday · 16 Jun 2026</div>
+</div>
+
+<!-- PRIORITY REMINDERS -->
+<div class="priority-banner">
+  <div class="priority-banner-label">🚨 Today's Priority Reminders</div>
+  <div class="priority-item"><span class="priority-tag">HIGH</span>Submit Amity documents in Osiris — Radboud cancels your application if not done today.</div>
+  <div class="priority-item">📦 Move Google data to Nextcloud + cancel Google One subscription (jethro.perdomo, 100GB).</div>
 </div>
 
 <!-- RECOVERY -->
 <div class="card">
-  <div class="card-label">Recovery · <span style="font-weight:normal;text-transform:none;letter-spacing:0">Live (most recent cycle: Jun 10)</span></div>
+  <div class="card-label">Recovery · <span style="font-weight:normal;text-transform:none;letter-spacing:0">live — cycle 2026-06-14</span></div>
   <div class="recovery-layout">
     <svg viewBox="0 0 140 90" width="140" height="90">
       <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#EBE3D5" stroke-width="11" stroke-linecap="round"/>
-      <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#D4713A" stroke-width="11" stroke-linecap="round" stroke-dasharray="123 189"/>
-      <text x="70" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#2D2416">65</text>
+      <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#C4723A" stroke-width="11" stroke-linecap="round" stroke-dasharray="60 189"/>
+      <text x="70" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#2D2416">32</text>
       <text x="70" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#9C845F" letter-spacing="2">SCORE</text>
       <text x="10" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#B0A090">0</text>
       <text x="130" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#B0A090">100</text>
     </svg>
     <div class="recovery-chips">
-      <div class="chip"><div class="chip-label">HRV</div><div class="chip-value chip-small">87.2<span class="chip-unit">ms</span></div></div>
-      <div class="chip"><div class="chip-label">Resting HR</div><div class="chip-value chip-small">53<span class="chip-unit">bpm</span></div></div>
-      <div class="chip"><div class="chip-label">Strain</div><div class="chip-value chip-small">13.2</div></div>
-      <div class="chip"><div class="chip-label">Sleep 93%</div><div class="chip-value chip-small">9.75<span class="chip-unit">h</span></div></div>
-      <div class="chip"><div class="chip-label">Resp. Rate</div><div class="chip-value chip-small">14.4<span class="chip-unit" style="font-size:.6rem"> br/m</span></div></div>
-      <div class="chip"><div class="chip-label">HRV 7-day avg</div><div class="chip-value chip-small">101.5<span class="chip-unit">ms</span></div></div>
+      <div class="chip"><div class="chip-label">HRV</div><div class="chip-value chip-small">56.7<span class="chip-unit">ms</span></div></div>
+      <div class="chip"><div class="chip-label">Resting HR</div><div class="chip-value chip-small">64<span class="chip-unit">bpm</span></div></div>
+      <div class="chip"><div class="chip-label">Strain (today)</div><div class="chip-value chip-small">—</div></div>
+      <div class="chip">
+        <div class="chip-label">Sleep · Jun 13→14 · 78%</div>
+        <div class="chip-value chip-small">8.9<span class="chip-unit">h</span></div>
+      </div>
+      <div class="chip"><div class="chip-label">Resp. Rate</div><div class="chip-value chip-small">14.7<span class="chip-unit">rpm</span></div></div>
+      <div class="chip"><div class="chip-label">HRV 7-day avg</div><div class="chip-value chip-small" style="font-size:.75rem;color:#9C845F">— (N=1)</div></div>
     </div>
   </div>
-  <div class="readiness-bar">
-    <strong>🟡 AMBER</strong> — Standard session. Calorie target: 2,450 kcal · Protein 145g · Carbs 310g
+  <div style="font-family:system-ui,sans-serif;font-size:.75rem;margin-top:12px;padding:8px 12px;background:#F0E8DC;border-radius:8px;border-left:3px solid #C4723A">
+    <strong>RED</strong> — Rest day. No high-intensity training. Target: 2,200 kcal / 130g P / 260g C / 71g F.
   </div>
-  <div class="sync-note">Jun 11 morning recovery not yet synced — data reflects most recent available cycle.</div>
 </div>
 
 <!-- TRAINING + NUTRITION -->
 <div class="two-col">
   <div class="card">
-    <div class="card-label">Today's Training</div>
-    <div class="workout-name">Push — Off-season</div>
+    <div class="card-label">Training</div>
+    <div class="workout-name">Last: 2026-06-11 — Push</div>
     <ul class="exercise-list">
-      <li class="exercise-row"><span>Incline DB Bench Press</span><span class="ex-sets">3×6–8 @ 16/20/20kg</span></li>
-      <li class="exercise-row"><span>Arnold Press</span><span class="ex-sets">3×8 @ 10kg/DB</span></li>
-      <li class="exercise-row"><span>Tricep Pulldown</span><span class="ex-sets">4×~10 @ 12–15kg</span></li>
-      <li class="exercise-row"><span>Bodyweight Dips</span><span class="ex-sets">2×8–10 BW</span></li>
+      <li class="exercise-row"><span>Incline DB Bench Press</span><span class="ex-sets">3×6-8 @ 16/20/20</span></li>
+      <li class="exercise-row"><span>Arnold Press</span><span class="ex-sets">3×8 @ 10kg</span></li>
+      <li class="exercise-row"><span>Tricep Pulldown</span><span class="ex-sets">4×10 @ 12-15kg</span></li>
+      <li class="exercise-row"><span>BW Dips</span><span class="ex-sets">2×8-10 BW</span></li>
     </ul>
-    <div class="note">First Push session logged — baselines set. Next Push: try 22kg DB on incline sets 2–3.</div>
-    <div class="streak"><span>7-day lifting</span>○ ● ○ ● ○ ○ ○</div>
-    <div class="note" style="margin-top:6px">Week: 12 sets logged</div>
+    <div class="note">↑ Next push: 8 clean reps at 20kg Incline DB before stepping to 22kg. Arnold → 3×10.</div>
+    <div class="streak"><span>Last 7 days (Jun 10–16)</span>○ ● ○ ○ ○ ○ ○</div>
+    <div class="note" style="margin-top:6px">This week: 0 sets logged</div>
   </div>
   <div class="card">
-    <div class="card-label">Nutrition</div>
+    <div class="card-label">Nutrition · <span style="font-weight:normal;text-transform:none;letter-spacing:0;color:#B0A090">Yesterday's intake</span></div>
     <div class="bar-row">
-      <div class="bar-header"><span class="bar-name">Protein</span><span class="bar-val">— / 145 g</span></div>
+      <div class="bar-header"><span class="bar-name">Protein</span><span class="bar-val">0 / 130 g</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#5D9464"></div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-header"><span class="bar-name">Carbohydrates</span><span class="bar-val">— / 310 g</span></div>
+      <div class="bar-header"><span class="bar-name">Carbohydrates</span><span class="bar-val">0 / 260 g</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#4F7BA8"></div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-header"><span class="bar-name">Calories</span><span class="bar-val">— / 2,450</span></div>
+      <div class="bar-header"><span class="bar-name">Calories</span><span class="bar-val">0 / 2,200 kcal</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#D4713A"></div></div>
     </div>
-    <div class="note">No nutrition data logged yet. Meal plan blocked (need 6+ recipes).</div>
+    <div class="note">No nutrition data yet — log meals tonight via Task B. Meal plan pending (needs 6+ recipes).</div>
   </div>
 </div>
 
 <!-- SUPPLEMENTS -->
 <div class="card">
-  <div class="card-label">Supplements · Creatine: MAINTENANCE · Start date not set</div>
+  <div class="card-label">Supplements · Creatine: MAINTENANCE · Day —</div>
+  <div class="warning-note">⚠ Task B last-routed header not found — supplement status from most recent file state.</div>
   <div class="supp-row"><span>Creatine 5g</span><span class="supp-status">✅</span></div>
-  <div class="supp-row"><span>Vitamin B12 1000mcg</span><span class="supp-status">✅</span></div>
-  <div class="supp-row"><span>Omega-3 2–3g</span><span class="supp-status">✅</span></div>
-  <div class="supp-row"><span>D3 + K2 (2000 IU / 100mcg)</span><span class="supp-status">⬜ Pending</span></div>
-  <div class="supp-row"><span>L-Lysine 1000mg</span><span class="supp-status">⬜ Pending</span></div>
-  <div class="supp-row"><span>Zinc 15mg</span><span class="supp-status">⬜ Pending</span></div>
-  <div class="note">No advisory flags active. Log D3+K2, Lysine, and Zinc with your largest meal / before bed tonight.</div>
+  <div class="supp-row"><span>Zinc 15mg</span><span class="supp-status">⬜</span></div>
+  <div class="supp-row"><span>Omega-3 2–3g</span><span class="supp-status">⬜</span></div>
+  <div class="flag-row">T4 — No training in 5+ days + creatine adherence 2/7 last week. Creatine requires daily dosing to maintain muscle saturation. Resume daily from today.</div>
 </div>
 
 <!-- COGNITIVE DEV + UPCOMING EVENTS -->
 <div class="two-col">
   <div class="card">
     <div class="card-label">Cognitive Dev</div>
-    <div class="fok-name">Investing &amp; Long-Term Wealth</div>
-    <div class="fok-sub">June FoK · Day 11 of 30</div>
-    <div class="bar-track"><div class="bar-fill" style="width:37%;background:#4F7BA8"></div></div>
-    <div class="fok-bar-labels"><span>Day 1</span><span>37%</span><span>Day 30</span></div>
-    <div class="essay-pill">📝 Essay due in 19 days · 30 Jun 2026</div>
-    <div class="overdue-pill">⚠ M1 OVERDUE — Wiki (7 blocks) was due Jun 10</div>
-    <div class="milestone-row" style="color:#C4723A">⬜ M1: Wiki complete · Due 2026-06-10 · OVERDUE</div>
-    <div class="milestone-row" style="color:#7D6E5A">⬜ M2: Core concepts self-test · 2026-06-17</div>
-    <div class="milestone-row" style="color:#7D6E5A">⬜ M3: Essay draft (1,500+ words) · 2026-06-24</div>
-    <div class="milestone-row" style="color:#7D6E5A">⬜ M4: Final essay filed · 2026-06-30</div>
-    <div class="streak" style="margin-top:12px"><span>7-day study</span>○ ○ ○ ● ○ ○ ○</div>
-    <div class="note">0h FoK logged / 15h target · Jun 11 entry: music (non-FoK)</div>
+    <div class="fok-name" style="color:#9C845F">FoK Paused</div>
+    <div class="fok-sub" style="color:#9C845F">New topic begins July 1</div>
+    <div class="streak" style="margin-top:12px"><span>Last 7 days study (Jun 10–16)</span>○ ● ○ ○ ✕ ✕ ✕</div>
+    <div class="note">✕ = 3+ consecutive no-study days. Display only — no drift penalty this month.</div>
   </div>
   <div class="card">
     <div class="card-label">Upcoming (7 days)</div>
     <div class="event-row">
       <div>
-        <div>FoK M2: Core concepts self-test</div>
-        <div class="event-type">FoK</div>
-        <div style="font-family:system-ui,sans-serif;font-size:.65rem;color:#9C845F;margin-top:2px">Compound interest, index funds, asset classes, risk</div>
+        <div>🚨 Amity docs → Osiris submission</div>
+        <div class="event-urgent">HIGH PRIORITY — Radboud cancels if not done</div>
       </div>
-      <div class="event-date">17 Jun<br>—</div>
+      <div class="event-date">16 Jun<br>TODAY</div>
+    </div>
+    <div class="event-row">
+      <div>
+        <div>Move Google data to Nextcloud + cancel Google One</div>
+        <div class="event-type">System</div>
+      </div>
+      <div class="event-date">16 Jun<br>TODAY</div>
+    </div>
+    <div class="event-row">
+      <div>
+        <div>Macro calibration check</div>
+        <div class="event-type">System</div>
+        <div style="font-family:system-ui,sans-serif;font-size:.65rem;color:#9C845F;margin-top:2px">2-week adjustment window per athletic_profile.md</div>
+      </div>
+      <div class="event-date">18 Jun</div>
     </div>
   </div>
 </div>
@@ -184,40 +200,29 @@
     <div class="drift-grid">
       <div class="drift-item">
         <div class="drift-dot" style="background:#5D9464"></div>
-        <div>
-          <div class="drift-label">Lifting</div>
-          <div class="drift-status" style="color:#5D9464">ON TRACK</div>
-        </div>
+        <div><div class="drift-label">Lifting</div><div class="drift-status" style="color:#5D9464">ON TRACK</div></div>
       </div>
       <div class="drift-item">
-        <div class="drift-dot" style="background:#5D9464"></div>
-        <div>
-          <div class="drift-label">Study</div>
-          <div class="drift-status" style="color:#5D9464">ON TRACK</div>
-        </div>
+        <div class="drift-dot" style="background:#9C845F"></div>
+        <div><div class="drift-label">Study</div><div class="drift-status" style="color:#9C845F">PAUSED</div></div>
       </div>
       <div class="drift-item">
-        <div class="drift-dot" style="background:#B0A090"></div>
-        <div>
-          <div class="drift-label">Nutrition</div>
-          <div class="drift-status" style="color:#B0A090">NO DATA</div>
-        </div>
+        <div class="drift-dot" style="background:#9C845F"></div>
+        <div><div class="drift-label">Nutrition</div><div class="drift-status" style="color:#9C845F">NO DATA</div></div>
       </div>
       <div class="drift-item">
-        <div class="drift-dot" style="background:#5D9464"></div>
-        <div>
-          <div class="drift-label">Sleep</div>
-          <div class="drift-status" style="color:#5D9464">ON TRACK</div>
-        </div>
+        <div class="drift-dot" style="background:#9C845F"></div>
+        <div><div class="drift-label">Sleep</div><div class="drift-status" style="color:#9C845F">NO DATA</div></div>
       </div>
     </div>
+    <div class="note">Lifting: recovery exemption (score 32 &lt; 33). Sleep: &lt;2 records available.</div>
   </div>
   <div class="card">
     <div class="card-label">Cross-Strand</div>
     <div class="cross-strand">
-      <div class="cs-item"><span class="cs-arrow">→</span>M1 overdue + 0 FoK investing sessions — 6 days to M2 self-test. Cognitive strand is the only failing system today.</div>
-      <div class="cs-item"><span class="cs-arrow">→</span>Physical executing cleanly: Push done, AMBER recovery (65), sleep 93%. Body is ready. The gap is intellectual.</div>
-      <div class="cs-item"><span class="cs-arrow">→</span>3/6 supplements unlogged + empty nutrition log. Jun 18 macro calibration is 7 days away with zero tracking data. Start logging meals and the evening stack tonight.</div>
+      <div class="cs-item"><span class="cs-arrow">→</span>RED recovery (32) after 5 days off training: exemption holds — body needs rest today. Eat to target (2,200 kcal) and let the recovery cycle close properly before next session.</div>
+      <div class="cs-item"><span class="cs-arrow">→</span>Amity/Osiris deadline is external and irreversible. Mental absence this week has let admin pile up. Complete the application before anything else — this is the one task with third-party consequences today.</div>
+      <div class="cs-item"><span class="cs-arrow">→</span>Creatine 2/7 + 5-day gap = muscle stores partially depleted. Daily creatine from today rebuilds saturation in ~1 week. Resume now — doesn't require training to start benefiting.</div>
     </div>
   </div>
 </div>
@@ -225,10 +230,10 @@
 <!-- FOCUS -->
 <div class="card focus-card">
   <div class="card-label">Today's Focus</div>
-  <div class="focus-text">"The body is working — the wiki isn't. Open the Investing wiki today and complete at least 2 of the 7 blocks. Milestone 1 is already late."</div>
+  <div class="focus-text">"Submit your Amity documents in Osiris — Radboud cancels applications without them and this cannot be undone. Recovery is RED so training waits today; the application does not."</div>
 </div>
 
-<div class="timestamp">Generated Thursday 11 Jun · 09:15 · Last journal: "Did one page of journaling (offline/paper)."</div>
+<div class="timestamp">Generated Tuesday 16 Jun · 09:15 · Last Task B: Never · Last journal: "Strange day filled with negative emotions. Have been mentally absent a couple days..." (Jun 16)</div>
 
 </body>
 </html>
