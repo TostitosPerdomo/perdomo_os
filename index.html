@@ -61,74 +61,68 @@
   .cs-arrow{color:#D4713A;margin-right:6px}
   .focus-card{border-left:3px solid #D4713A}
   .focus-text{font-size:.95rem;line-height:1.7;font-style:italic}
-  .auto-detect-banner{font-family:system-ui,sans-serif;font-size:.72rem;color:#8B6914;margin-top:12px;padding:7px 10px;background:#FDF6E3;border-radius:8px;border-left:3px solid #D4A93A}
   .timestamp{text-align:right;font-family:system-ui,sans-serif;font-size:.65rem;color:#B0A090;margin-top:6px}
   .section-divider{font-family:system-ui,sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#B0A090;margin:10px 0 6px}
-  .pending-banner{font-family:system-ui,sans-serif;font-size:.72rem;color:#7D6E5A;padding:8px 12px;background:#F0E8DC;border-radius:8px;margin-bottom:14px;border-left:3px solid #9C845F}
+  .recovery-note{font-family:system-ui,sans-serif;font-size:.72rem;color:#8B6914;margin-top:10px;padding:7px 10px;background:#FDF6E3;border-radius:8px;border-left:3px solid #D4A93A}
 </style>
 </head>
 <body>
 
 <div class="header">
   <div class="header-os">PERDOMO <span>OS</span></div>
-  <div class="header-date">Wednesday · 17 Jun 2026</div>
-</div>
-
-<!-- RECOVERY PENDING NOTICE -->
-<div class="pending-banner">
-  ⏳ <strong>Recovery score not yet available</strong> — Whoop file generated at 08:00 UTC before today's cycle closed. Check the Whoop app around 10:00 for today's readiness. Data shown is from the most recent scored cycle (Jun 14).
+  <div class="header-date">Thursday &middot; 18 Jun 2026</div>
 </div>
 
 <!-- RECOVERY -->
 <div class="card">
-  <div class="card-label">Recovery · <span style="font-weight:normal;text-transform:none;letter-spacing:0">stale — most recent scored cycle Jun 14</span></div>
+  <div class="card-label">Recovery &middot; <span style="font-weight:normal;text-transform:none;letter-spacing:0">live &mdash; recovery not yet scored &middot; most recent cycle Jun 14</span></div>
   <div class="recovery-layout">
     <svg viewBox="0 0 140 90" width="140" height="90">
       <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#EBE3D5" stroke-width="11" stroke-linecap="round"/>
       <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#9C845F" stroke-width="11" stroke-linecap="round" stroke-dasharray="0 189"/>
-      <text x="70" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#9C845F">—</text>
-      <text x="70" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#9C845F" letter-spacing="2">PENDING</text>
+      <text x="70" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#9C845F">&#8212;</text>
+      <text x="70" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#9C845F" letter-spacing="2">SCORE</text>
       <text x="10" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#B0A090">0</text>
       <text x="130" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#B0A090">100</text>
     </svg>
     <div class="recovery-chips">
-      <div class="chip"><div class="chip-label">HRV · Jun 14</div><div class="chip-value chip-small">56.7<span class="chip-unit">ms</span></div></div>
-      <div class="chip"><div class="chip-label">Resting HR · Jun 14</div><div class="chip-value chip-small">64<span class="chip-unit">bpm</span></div></div>
+      <div class="chip"><div class="chip-label">HRV (Jun 14)</div><div class="chip-value chip-small">56.7<span class="chip-unit">ms</span></div></div>
+      <div class="chip"><div class="chip-label">Resting HR (Jun 14)</div><div class="chip-value chip-small">64<span class="chip-unit">bpm</span></div></div>
       <div class="chip">
         <div class="chip-label">Strain (today)</div>
-        <div class="chip-value chip-small">—</div>
+        <div class="chip-value chip-small">&#8212;</div>
       </div>
       <div class="chip">
-        <div class="chip-label">Sleep · Jun 13→14 · 78%</div>
+        <div class="chip-label">Sleep &middot; Jun 13&#8594;14 &middot; 78%</div>
         <div class="chip-value chip-small">8.9<span class="chip-unit">h</span></div>
       </div>
-      <div class="chip"><div class="chip-label">Resp. Rate · Jun 13→14</div><div class="chip-value chip-small">14.7<span class="chip-unit">rpm</span></div></div>
-      <div class="chip"><div class="chip-label">HRV 7-day avg</div><div class="chip-value chip-small">56.7<span class="chip-unit">ms (N=1)</span></div></div>
+      <div class="chip"><div class="chip-label">Resp. Rate (Jun 14)</div><div class="chip-value chip-small">14.7<span class="chip-unit">rpm</span></div></div>
+      <div class="chip"><div class="chip-label">HRV 7-day avg</div><div class="chip-value chip-small" style="font-size:.8rem">56.7<span class="chip-unit">ms (N=1)</span></div></div>
     </div>
   </div>
   <div style="font-family:system-ui,sans-serif;font-size:.75rem;margin-top:12px;padding:8px 12px;background:#F0E8DC;border-radius:8px;border-left:3px solid #9C845F">
-    <strong>FLAG — score unavailable</strong> → defaulting to AMBER targets: 2,450 kcal / 145g P / 310g C / 70g F. Check Whoop app and upgrade to GREEN targets if score ≥ 70.
+    <strong>FLAG &mdash; no score yet</strong> &mdash; Recovery not yet scored for Jun 18. Defaulting to AMBER targets: 2,450 kcal &middot; 145g P &middot; 310g C &middot; 70g F
   </div>
-  <div class="auto-detect-banner">⚠ Whoop auto-detected: boxing on Jun 15 · strain 12.2 · No matching entry in lifting_log.md. If real, log tonight via Task B. Ignored for drift and streak.</div>
+  <div class="recovery-note">&#9888; Today's Whoop file has no recovery or sleep rows yet &mdash; score typically appears by mid-morning. Most recent data shown is from Jun 14.</div>
 </div>
 
 <!-- TRAINING + NUTRITION -->
 <div class="two-col">
   <div class="card">
     <div class="card-label">Training</div>
-    <div class="workout-name">Last: 2026-06-11 — Push <span style="font-family:system-ui,sans-serif;font-size:.72rem;color:#C4723A;font-weight:normal">(6 days ago)</span></div>
+    <div class="workout-name">Last: 11 Jun &mdash; Push</div>
     <ul class="exercise-list">
-      <li class="exercise-row"><span>Incline DB Bench Press</span><span class="ex-sets">3×6-8 @ 20kg</span></li>
-      <li class="exercise-row"><span>Arnold Press</span><span class="ex-sets">3×8 @ 10kg</span></li>
-      <li class="exercise-row"><span>Tricep Pulldown</span><span class="ex-sets">4×10 @ 12–15kg</span></li>
-      <li class="exercise-row"><span>BW Dips</span><span class="ex-sets">2×8-10 @ BW</span></li>
+      <li class="exercise-row"><span>Incline DB Bench Press</span><span class="ex-sets">3&times;6&ndash;8 @ 16/20/20</span></li>
+      <li class="exercise-row"><span>Arnold Press</span><span class="ex-sets">3&times;8 @ 10kg DB</span></li>
+      <li class="exercise-row"><span>Tricep Pulldown</span><span class="ex-sets">4&times;10 @ 12/15/15/12</span></li>
+      <li class="exercise-row"><span>BW Dips</span><span class="ex-sets">2&times;8&ndash;10 @ BW</span></li>
     </ul>
-    <div class="note">↑ Overload: Incline DB → 22kg sets 2–3. Arnold → 12kg. Tricep PD → 15kg all 4 sets (no drop).</div>
-    <div class="streak"><span>Last 7 days (Jun 11–17)</span>● ○ ○ ○ ○ ○ ○</div>
-    <div class="note" style="margin-top:6px">This week (Jun 16–22): 0 sets logged</div>
+    <div class="note">&#8593; Overload: Incline DB &rarr; 22kg Sets 2&ndash;3 &middot; Arnold &rarr; 12kg &middot; Tricep &rarr; 15kg all 4 sets &middot; Dips &rarr; add 3rd set</div>
+    <div class="streak"><span>Last 7 days (Jun 12&ndash;18)</span>&#9675; &#9675; &#9675; &#9675; &#9675; &#9675; &#9675;</div>
+    <div class="note" style="margin-top:6px">This week (Jun 15&ndash;21): 0 sets &middot; Whoop auto-detected: activity &times;3 Jun 13, boxing Jun 15 &mdash; not in log, not counted</div>
   </div>
   <div class="card">
-    <div class="card-label">Nutrition · <span style="font-weight:normal;text-transform:none;letter-spacing:0;color:#B0A090">Yesterday's intake</span></div>
+    <div class="card-label">Nutrition &middot; <span style="font-weight:normal;text-transform:none;letter-spacing:0;color:#B0A090">Yesterday's intake</span></div>
     <div class="bar-row">
       <div class="bar-header"><span class="bar-name">Protein</span><span class="bar-val">0 / 145 g</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#5D9464"></div></div>
@@ -141,17 +135,18 @@
       <div class="bar-header"><span class="bar-name">Calories</span><span class="bar-val">0 / 2,450 kcal</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#D4713A"></div></div>
     </div>
-    <div class="note">No nutrition logged yet. Calibration check opens tomorrow — log tonight via Task B.</div>
+    <div class="note">AMBER targets (no recovery score) &middot; No entry in nutrition_log.md &middot; Meal plan not yet generated</div>
   </div>
 </div>
 
 <!-- SUPPLEMENTS -->
 <div class="card">
-  <div class="card-label">Supplements · Creatine: MAINTENANCE · Day: ? (start date not filled)</div>
-  <div class="supp-row"><span>Creatine 5g</span><span class="supp-status">✅</span></div>
-  <div class="supp-row"><span>Zinc 15mg</span><span class="supp-status">⬜</span></div>
-  <div class="supp-row"><span>Omega-3 2–3g</span><span class="supp-status">⬜</span></div>
-  <div class="flag-row">T4 — No confirmed training in 6 days AND creatine adherence 2/7 last week. Creatine requires consistent daily dosing to saturate muscle stores — missed days reduce effectiveness. Daily from today.</div>
+  <div class="card-label">Supplements &middot; Creatine: MAINTENANCE &middot; Day N/A (start date not set)</div>
+  <div class="note" style="margin-bottom:10px;color:#C4723A">&#9888; Last Task B: 2026-06-17 (yesterday) &mdash; last night's input not yet processed. Status from most recent log.</div>
+  <div class="supp-row"><span>Creatine 5g</span><span class="supp-status">&#9989;</span></div>
+  <div class="supp-row"><span>Zinc 15mg</span><span class="supp-status">&#11036;</span></div>
+  <div class="supp-row"><span>Omega-3 2&ndash;3g</span><span class="supp-status">&#11036;</span></div>
+  <div class="flag-row">&#9888; T4 &mdash; Both training and creatine have been inconsistent. Creatine requires consistent daily dosing to saturate muscle stores &mdash; missed days reduce effectiveness.</div>
 </div>
 
 <!-- COGNITIVE DEV + UPCOMING EVENTS -->
@@ -160,22 +155,25 @@
     <div class="card-label">Cognitive Dev</div>
     <div class="fok-name" style="color:#9C845F">FoK Paused</div>
     <div class="fok-sub" style="color:#9C845F">New topic begins July 1</div>
-    <div class="streak" style="margin-top:12px"><span>Last 7 days study (Jun 11–17)</span>● ○ ○ ○ ○ ○ ○</div>
-    <div class="note" style="margin-top:6px">Jun 11: music research (non-FoK). Historical record only.</div>
+    <div class="streak" style="margin-top:12px"><span>Last 7 days study (Jun 12&ndash;18)</span>&#9675; &#9675; &#9675; &#9675; &#9675; &#9675; &#9675;</div>
   </div>
   <div class="card">
     <div class="card-label">Upcoming (7 days)</div>
     <div class="section-divider">Overdue</div>
     <div class="event-row">
-      <div><div>FoK Milestone 1 — Wiki complete</div><div class="event-overdue">❌ Overdue — Jun 10</div></div>
-      <div class="event-date">10 Jun</div>
-    </div>
-    <div class="event-row">
-      <div><div>Google data → Nextcloud + cancel Google One</div><div class="event-overdue">❌ Overdue — Jun 16</div></div>
+      <div>
+        <div>&#128276; Google data &rarr; Nextcloud &middot; cancel Google One</div>
+        <div class="event-overdue">&#10060; Overdue &mdash; Jun 16</div>
+        <div class="event-type">System</div>
+      </div>
       <div class="event-date">16 Jun</div>
     </div>
     <div class="event-row">
-      <div><div>🚨 Amity docs + Osiris submission (Radboud)</div><div class="event-overdue">🚨 HIGH PRIORITY — Jun 16</div></div>
+      <div>
+        <div>&#128680; Amity docs + Osiris submission (Radboud)</div>
+        <div class="event-overdue">&#10060; Overdue &mdash; Jun 16 &middot; HIGH PRIORITY</div>
+        <div class="event-type">System</div>
+      </div>
       <div class="event-date">16 Jun</div>
     </div>
     <div class="section-divider">Upcoming</div>
@@ -183,17 +181,9 @@
       <div>
         <div>Macro calibration check</div>
         <div class="event-type">System</div>
-        <div style="font-family:system-ui,sans-serif;font-size:.65rem;color:#9C845F;margin-top:2px">2-week window — log nutrition tonight first</div>
+        <div style="font-family:system-ui,sans-serif;font-size:.65rem;color:#9C845F;margin-top:2px">First 2-week adjustment window per athletic_profile.md</div>
       </div>
-      <div class="event-date">18 Jun<br>—</div>
-    </div>
-    <div class="event-row">
-      <div>
-        <div>FoK Milestone 3 — Essay draft</div>
-        <div class="event-type">FoK</div>
-        <div style="font-family:system-ui,sans-serif;font-size:.65rem;color:#9C845F;margin-top:2px">FoK suspended — for reference</div>
-      </div>
-      <div class="event-date">24 Jun<br>—</div>
+      <div class="event-date">18 Jun<br>today</div>
     </div>
   </div>
 </div>
@@ -220,14 +210,14 @@
         <div><div class="drift-label">Sleep</div><div class="drift-status" style="color:#9C845F">NO DATA</div></div>
       </div>
     </div>
-    <div class="note">Lifting: 6 days, no confirmed session. Recovery score unavailable — exemption not confirmed. Study: June override.</div>
+    <div class="note">Lifting: 7 days no session &mdash; no score to apply recovery exemption. Study: June override. Nutrition: log empty. Sleep: 1 record on file.</div>
   </div>
   <div class="card">
     <div class="card-label">Cross-Strand</div>
     <div class="cross-strand">
-      <div class="cs-item"><span class="cs-arrow">→</span>6-day training gap with recovery unknown. Check Whoop ~10:00. If AMBER or GREEN, train today — Pull or Lower Body. No justification for another rest day without a confirmed RED score.</div>
-      <div class="cs-item"><span class="cs-arrow">→</span>Macro calibration opens tomorrow (Jun 18) with zero intake data. Log tonight via Task B — even a rough estimate. Without data, calibration cannot happen and targets stay miscalibrated.</div>
-      <div class="cs-item"><span class="cs-arrow">→</span>Osiris/Radboud application is 1 day overdue. Radboud cancels without Amity documents. First task of the day — before training, supplements, or anything else.</div>
+      <div class="cs-item"><span class="cs-arrow">&rarr;</span>7-day lifting gap. Sleep Jun 14 was 8.9h / 78% &mdash; reasonable baseline. Even 30&ndash;40 min today breaks the streak and reactivates the training loop.</div>
+      <div class="cs-item"><span class="cs-arrow">&rarr;</span>Amity docs + Radboud Osiris submission are overdue and HIGH PRIORITY. University admission is at risk. Do this before the gym.</div>
+      <div class="cs-item"><span class="cs-arrow">&rarr;</span>Zinc: 0/7 this week. Directly supports deep sleep and testosterone recovery &mdash; both limiting training output. Take tonight before bed with food.</div>
     </div>
   </div>
 </div>
@@ -235,10 +225,10 @@
 <!-- FOCUS -->
 <div class="card focus-card">
   <div class="card-label">Today's Focus</div>
-  <div class="focus-text">"Two things cannot wait: the Osiris/Radboud application (cancellation risk, already overdue) and breaking the 6-day training gap. Handle Osiris first — then check Whoop when recovery posts, and train if AMBER or better. Log nutrition tonight so tomorrow's calibration check has data."</div>
+  <div class="focus-text">"Get the Amity documents and submit the Radboud Osiris application &mdash; university access is at risk. Then train (any session; Push or Full Body to break the 7-day gap). Log both tonight via Task B. Take Zinc before bed."</div>
 </div>
 
-<div class="timestamp">Generated Wednesday 17 Jun · 09:15 · Last Task B: 2026-06-17 · Last journal: Not much today. Dealt with university/legal stuff. Worked on some rap lyrics and journaled a page.</div>
+<div class="timestamp">Generated Thu 18 Jun 2026 &middot; 09:15 &middot; Last Task B: 2026-06-17 &middot; Last journal: "Not much today. Dealt with university/legal stuff. Worked on some rap lyrics and j&hellip;"</div>
 
 </body>
 </html>
