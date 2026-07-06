@@ -56,12 +56,12 @@
   .drift-label{font-family:system-ui,sans-serif;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:#9C845F}
   .drift-status{font-family:system-ui,sans-serif;font-size:.7rem;font-weight:700;margin-top:2px}
   .cross-strand{margin-top:12px}
-  .cs-item{font-family:system-ui,sans-serif;font-size:.75rem;padding:6px 0;border-bottom:1px solid #EBE3D5;color:#2D2416}
+  .cs-item{font-family:system-ui,sans-serif;font-size:.75rem;padding:6px 0;border-bottom:1px solid #EBE3D5;color:#2D2416;line-height:1.5}
   .cs-item:last-child{border-bottom:none}
   .cs-arrow{color:#D4713A;margin-right:6px}
   .focus-card{border-left:3px solid #D4713A}
   .focus-text{font-size:.95rem;line-height:1.7;font-style:italic}
-  .warn-banner{font-family:system-ui,sans-serif;font-size:.72rem;color:#8B6914;margin-bottom:14px;padding:9px 12px;background:#FDF6E3;border-radius:8px;border-left:3px solid #D4A93A}
+  .auto-detect-banner{font-family:system-ui,sans-serif;font-size:.72rem;color:#8B6914;margin-bottom:12px;padding:7px 10px;background:#FDF6E3;border-radius:8px;border-left:3px solid #D4A93A}
   .timestamp{text-align:right;font-family:system-ui,sans-serif;font-size:.65rem;color:#B0A090;margin-top:6px}
   .section-divider{font-family:system-ui,sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#B0A090;margin:10px 0 6px}
 </style>
@@ -70,40 +70,41 @@
 
 <div class="header">
   <div class="header-os">PERDOMO <span>OS</span></div>
-  <div class="header-date">Sunday · 05 Jul 2026</div>
+  <div class="header-date">Monday · 06 Jul 2026</div>
 </div>
 
-<div class="warn-banner">⚠ No Whoop file synced for today — running on the 2026-07-04 export. The missing file is the still-open "Whoop data sync bug," now blocking fresh data two mornings running. · Last night's input not yet processed (Task B last ran 2026-07-04).</div>
+<!-- SYNC WARNING -->
+<div class="auto-detect-banner" style="color:#C4723A;background:#FEF4EC;border-left-color:#D4713A">⚠ Whoop sync down — no file for Jul 6 (third morning on stale data). Running on the Jul 5 cycle. Manual fallback is a month old and ignored. "Fix Whoop sync" reminder is now overdue.</div>
 
 <!-- RECOVERY -->
 <div class="card">
-  <div class="card-label">Recovery · <span style="font-weight:normal;text-transform:none;letter-spacing:0">stale file — cycle 2026-07-04</span></div>
+  <div class="card-label">Recovery · <span style="font-weight:normal;text-transform:none;letter-spacing:0">Stale file — cycle Jul 5</span></div>
   <div class="recovery-layout">
     <svg viewBox="0 0 140 90" width="140" height="90">
       <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#EBE3D5" stroke-width="11" stroke-linecap="round"/>
-      <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#5D9464" stroke-width="11" stroke-linecap="round" stroke-dasharray="145 189"/>
-      <text x="70" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#2D2416">77</text>
+      <path d="M 10 80 A 60 60 0 0 1 130 80" fill="none" stroke="#D4A93A" stroke-width="11" stroke-linecap="round" stroke-dasharray="107 189"/>
+      <text x="70" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#2D2416">57</text>
       <text x="70" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#9C845F" letter-spacing="2">SCORE</text>
       <text x="10" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#B0A090">0</text>
       <text x="130" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#B0A090">100</text>
     </svg>
     <div class="recovery-chips">
-      <div class="chip"><div class="chip-label">HRV</div><div class="chip-value chip-small">90.4<span class="chip-unit">ms</span></div></div>
-      <div class="chip"><div class="chip-label">Resting HR</div><div class="chip-value chip-small">55<span class="chip-unit">bpm</span></div></div>
+      <div class="chip"><div class="chip-label">HRV</div><div class="chip-value chip-small">70.6<span class="chip-unit">ms</span></div></div>
+      <div class="chip"><div class="chip-label">Resting HR</div><div class="chip-value chip-small">62<span class="chip-unit">bpm</span></div></div>
       <div class="chip">
         <div class="chip-label">Strain (today)</div>
         <div class="chip-value chip-small">—</div>
       </div>
       <div class="chip">
-        <div class="chip-label">Sleep · Jul 3→4 · 75%</div>
-        <div class="chip-value chip-small">7.5<span class="chip-unit">h</span></div>
+        <div class="chip-label">Sleep · Jul 4→5 · 79%</div>
+        <div class="chip-value chip-small">9.6<span class="chip-unit">h</span></div>
       </div>
-      <div class="chip"><div class="chip-label">Resp. Rate</div><div class="chip-value chip-small">14.1<span class="chip-unit">rpm</span></div></div>
-      <div class="chip"><div class="chip-label">HRV 7-day avg</div><div class="chip-value chip-small">85.9<span class="chip-unit">ms</span></div></div>
+      <div class="chip"><div class="chip-label">Resp. Rate</div><div class="chip-value chip-small">14.4<span class="chip-unit">rpm</span></div></div>
+      <div class="chip"><div class="chip-label">HRV 7-day avg</div><div class="chip-value chip-small">83.9<span class="chip-unit">ms</span></div></div>
     </div>
   </div>
-  <div style="font-family:system-ui,sans-serif;font-size:.75rem;margin-top:12px;padding:8px 12px;background:#F0E8DC;border-radius:8px;border-left:3px solid #5D9464">
-    <strong>GREEN</strong> — full training green light; HRV climbing above its 7-day avg. Fuel a heavy day: 2,650 kcal target.
+  <div style="font-family:system-ui,sans-serif;font-size:.75rem;margin-top:12px;padding:8px 12px;background:#F0E8DC;border-radius:8px;border-left:3px solid #D4A93A">
+    <strong>AMBER</strong> — Recovery fell 77→57, HRV below its 7-day avg, RHR up 7bpm despite 9.6h sleep. Data is one day stale, so treat as provisional. Today: 2,450 kcal target; if you train, keep it light and technical.
   </div>
 </div>
 
@@ -113,41 +114,41 @@
     <div class="card-label">Training</div>
     <div class="workout-name">Last: 2026-07-02 — Legs</div>
     <ul class="exercise-list">
-      <li class="exercise-row"><span>Deadlift</span><span class="ex-sets">3 × 8/12/8 @ 63kg</span></li>
-      <li class="exercise-row"><span>Weighted Lunges</span><span class="ex-sets">3 × 24/24/12 @ 10–12kg</span></li>
-      <li class="exercise-row"><span>Bodyweight Dips</span><span class="ex-sets">1 × ~13 BW</span></li>
-      <li class="exercise-row"><span>Run + Sparring</span><span class="ex-sets">1km · light</span></li>
+      <li class="exercise-row"><span>Deadlift</span><span class="ex-sets">3×8–12 @ 63kg</span></li>
+      <li class="exercise-row"><span>Weighted Lunges</span><span class="ex-sets">3× @ 10–12kg</span></li>
+      <li class="exercise-row"><span>Bodyweight Dips</span><span class="ex-sets">1×~13 BW</span></li>
+      <li class="exercise-row"><span>Sparring (Dylan)</span><span class="ex-sets">light</span></li>
     </ul>
-    <div class="note">↑ Overload: do NOT add deadlift load — lower-back pain flagged 07-03. Open with light technique work (or a hinge sub) before 63kg. Lunges → 12kg all sets once the back settles.</div>
-    <div class="streak"><span>Last 7 days</span>✕ ✕ ✕ ● ✕ ✕ ✕</div>
+    <div class="note">↑ Overload: Do NOT add deadlift load — lower-back pain flagged 07-03 signals a form fault. Open next session with light, technique-focused hinging. Dips +1 rep.</div>
+    <div class="streak"><span>Last 7 days</span>○ ○ ● ○ ✕ ✕ ✕</div>
     <div class="note" style="margin-top:6px">This week: 7 sets logged</div>
   </div>
   <div class="card">
     <div class="card-label">Nutrition · <span style="font-weight:normal;text-transform:none;letter-spacing:0;color:#B0A090">Yesterday's intake</span></div>
     <div class="bar-row">
-      <div class="bar-header"><span class="bar-name">Protein</span><span class="bar-val">0 / 155 g</span></div>
+      <div class="bar-header"><span class="bar-name">Protein</span><span class="bar-val">0 / 145 g</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#5D9464"></div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-header"><span class="bar-name">Carbohydrates</span><span class="bar-val">0 / 345 g</span></div>
+      <div class="bar-header"><span class="bar-name">Carbohydrates</span><span class="bar-val">0 / 310 g</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#4F7BA8"></div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-header"><span class="bar-name">Calories</span><span class="bar-val">0 / 2,650 kcal</span></div>
+      <div class="bar-header"><span class="bar-name">Calories</span><span class="bar-val">0 / 2,450 kcal</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:0%;background:#D4713A"></div></div>
     </div>
-    <div class="note">Target is today's · No entry logged 07-04. Meal plan not yet generated (needs 6+ recipes).</div>
+    <div class="note">Target is today's · No log since Jul 2 · Meal plan not yet generated (needs 6+ recipes)</div>
   </div>
 </div>
 
 <!-- SUPPLEMENTS -->
 <div class="card">
-  <div class="card-label">Supplements · Creatine: MAINTENANCE · Day —</div>
+  <div class="card-label">Supplements · Creatine: Maintenance · start date not set</div>
   <div class="note" style="margin-bottom:10px;color:#C4723A">⚠ Last night's input not yet processed (Task B last ran 2026-07-04) — status shown from most recent log.</div>
   <div class="supp-row"><span>Creatine 5g</span><span class="supp-status">⬜</span></div>
   <div class="supp-row"><span>Zinc 15mg</span><span class="supp-status">✅</span></div>
   <div class="supp-row"><span>Omega-3 2–3g</span><span class="supp-status">⬜</span></div>
-  <div class="flag-row">Lean bulk + creatine adherence under 60% (0/7 this week). Creatine adds ~0.5–1kg of lean-mass hydration — with dosing inconsistent, today's Sunday weigh-in is hard to interpret. Log it for the record; don't act on it.</div>
+  <div class="flag-row">C2 — Both cognitive engagement (3+ days no study) and B12 adherence are low this week. B12 deficit compounds cognitive fatigue. Take with breakfast before study today.</div>
 </div>
 
 <!-- COGNITIVE DEV + UPCOMING EVENTS -->
@@ -155,23 +156,23 @@
   <div class="card">
     <div class="card-label">Cognitive Dev</div>
     <div class="fok-name">The Fighter's Mind</div>
-    <div class="fok-sub">26 days to essay · 3h 0m / 15h logged</div>
-    <div class="flag-row">⚠ Checkpoint #1 (vault live + MOC seeded) due tomorrow, 2026-07-06 — still in progress.</div>
-    <div class="streak" style="margin-top:12px"><span>Last 7 days study</span>✕ ✕ ✕ ✕ ● ○ ○</div>
+    <div class="fok-sub">25 days to essay · 3h / 15h logged</div>
+    <div class="flag-row" style="color:#8B6914;background:#FDF6E3;border-left-color:#D4A93A">◷ Checkpoint 1 due TODAY: Second Brain vault live + Fighters_Mind MOC seeded (7 themes) — in progress.</div>
+    <div class="streak" style="margin-top:12px"><span>Last 7 days study</span>○ ○ ○ ● ○ ○ ✕</div>
   </div>
   <div class="card">
     <div class="card-label">Upcoming (7 days)</div>
-    <div class="section-divider">Overdue / Outstanding</div>
+    <div class="section-divider">Overdue</div>
     <div class="event-row">
-      <div><div>Google → Nextcloud migration + cancel Google One</div><div class="event-overdue">❌ Outstanding — since 2026-06-16 (~19d)</div></div>
-      <div class="event-date">16 Jun</div>
-    </div>
-    <div class="event-row">
-      <div><div>Fix Whoop data sync bug</div><div class="event-overdue">❌ Confirmed again today — no 07-05 file</div></div>
+      <div><div>Fix Whoop data sync bug</div><div class="event-overdue">❌ Overdue — Jul 4</div></div>
       <div class="event-date">4 Jul</div>
     </div>
+    <div class="event-row">
+      <div><div>Google → Nextcloud + cancel Google One</div><div class="event-overdue">❌ Overdue — Jun 16</div></div>
+      <div class="event-date">16 Jun</div>
+    </div>
     <div class="section-divider">Upcoming</div>
-    <div class="note">No personal events in the next 7 days. FoK checkpoint #1 falls tomorrow (07-06). Emonthebrain masterclass is 07-18.</div>
+    <div class="note">No personal events in next 7 days. (Emonthebrain masterclass is Jul 18.)</div>
   </div>
 </div>
 
@@ -185,8 +186,8 @@
         <div><div class="drift-label">Lifting</div><div class="drift-status" style="color:#D4713A">DRIFTING</div></div>
       </div>
       <div class="drift-item">
-        <div class="drift-dot" style="background:#5D9464"></div>
-        <div><div class="drift-label">Study</div><div class="drift-status" style="color:#5D9464">ON TRACK</div></div>
+        <div class="drift-dot" style="background:#D4713A"></div>
+        <div><div class="drift-label">Study</div><div class="drift-status" style="color:#D4713A">DRIFTING</div></div>
       </div>
       <div class="drift-item">
         <div class="drift-dot" style="background:#D4713A"></div>
@@ -197,14 +198,14 @@
         <div><div class="drift-label">Sleep</div><div class="drift-status" style="color:#5D9464">ON TRACK</div></div>
       </div>
     </div>
-    <div class="note">Lifting: 3 days since last session, recovery 77 — no exemption. Nutrition: no entry since 07-02. Both are exactly the lines yesterday's briefing warned would trip today.</div>
+    <div class="note">Lifting: 4d since last session, recovery ≥33 (no exemption). Study: no session since Jul 3. Nutrition: no entry since Jul 2.</div>
   </div>
   <div class="card">
     <div class="card-label">Cross-Strand</div>
     <div class="cross-strand">
-      <div class="cs-item"><span class="cs-arrow">→</span>Recovery GREEN (77), HRV above its 7-day avg — best training window in days, nothing logged since 07-02. Use today: deadlift technique first to fix the form that hurt your back, then load.</div>
-      <div class="cs-item"><span class="cs-arrow">→</span>Nutrition dark on a lean bulk + it's weigh-in day. With no intake data and creatine 0/7, the scale is uninterpretable. Log weight for the record, then one nutrition_log entry — the Q3 keystone that unblocks Task C.</div>
-      <div class="cs-item"><span class="cs-arrow">→</span>FoK checkpoint #1 due tomorrow, still in progress. A short session today closes it on time and breaks June's pattern — a researched topic that never got filed.</div>
+      <div class="cs-item"><span class="cs-arrow">→</span>Whoop pipeline is broken, not just mislabeled — no Jul 6 file at all, third stale morning. Sync-fix reminder now overdue. Fix today so tomorrow's readiness is real; until then AMBER is provisional.</div>
+      <div class="cs-item"><span class="cs-arrow">→</span>Three drift signals at once (lifting 4d, study 3d, nutrition 4d) = the Q3 single point of failure, the nightly input habit, slipping. Task B last ran Jul 4. Writing night_input tonight breaks all three at once.</div>
+      <div class="cs-item"><span class="cs-arrow">→</span>Recovery trending down (77→57, HRV below avg, RHR +7) despite 9.6h sleep, plus an open lower-back issue. If you train, favor mobility and technique over load — protect the hinge.</div>
     </div>
   </div>
 </div>
@@ -212,10 +213,10 @@
 <!-- FOCUS -->
 <div class="card focus-card">
   <div class="card-label">Today's Focus</div>
-  <div class="focus-text">"High-readiness day — don't waste it. Train (deadlift technique first, then load), log your Sunday weight, put one nutrition_log entry down, and close FoK checkpoint #1 before tomorrow."</div>
+  <div class="focus-text">"Fix the Whoop sync and write tonight's night_input — that one habit clears all three drift flags at once. Then close FoK checkpoint #1: seed the Fighter's Mind vault, it's due today. If you train, keep it light and form-focused — no heavy deadlifts on a 57."</div>
 </div>
 
-<div class="timestamp">Generated Sunday 05 Jul · 08:00 · Last Task B: 2026-07-04 · Last journal: "Whole bunch of a little bit of this... Took zinc. Tomorrow I hope to chill tf out..."</div>
+<div class="timestamp">Generated Monday 06 Jul · 08:00 · Last Task B: 2026-07-04 · Last journal: 2026-07-04 — "…things kept swaying me away from it… Took zinc."</div>
 
 </body>
 </html>
