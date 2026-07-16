@@ -1918,9 +1918,9 @@
   </div>
 
   <!-- TODAY'S FOCUS -->
-  <div style="border-radius: 28px; padding: 40px 48px; margin-bottom: 32px; box-shadow: 0 20px 40px -20px oklch(30% 0.05 40 / 0.4); width: 1050px; height: 213px; background-color: var(--feature-bg)">
+  <div style="border-radius: 28px; padding: 40px 48px; margin-bottom: 32px; box-shadow: 0 20px 40px -20px oklch(30% 0.05 40 / 0.4); background-color: var(--feature-bg)">
     <div style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--on-accent); opacity:0.75; margin-bottom:14px;">Today's Focus</div>
-    <div style="font-family: 'Sora',sans-serif; font-weight: 600; font-size: 28px; line-height: 1.38; color: var(--on-accent); max-width: 1080px; position: relative; top: 10px">{{ focusStatement }}</div>
+    <div style="font-family: 'Sora',sans-serif; font-weight: 600; font-size: 28px; line-height: 1.38; color: var(--on-accent); max-width: 1080px;">{{ focusStatement }}</div>
   </div>
 
   <!-- RECOVERY -->
@@ -2324,10 +2324,10 @@ class Component extends DCLogic {
     const palette = this.props.palette || 'paper';
 
     const metrics = [
-      this.buildMetric('Sleep Duration', 'h', this.sleepHours, 1, "Declining", "good", "7-day average is 7.2h, still within target, but that's down 0.8h from the prior week's 8.0h average, driven mainly by last night's acute 4.5h crash."),
-      this.buildMetric('HRV', 'ms', this.hrvArr, 1, "Declining", "warn", "7-day HRV average fell from 88.5ms to 79.6ms (-8.9ms), consistent with back-to-back MMA sessions and short sleep."),
-      this.buildMetric('Resting HR', 'bpm', this.rhrArr, 0, "Rising", "warn", "Resting HR crept up from a 55.4bpm average to 57.3bpm, a mild but real elevation matching the accumulated training and sleep debt."),
-      this.buildMetric('Resp. Rate', 'rpm', this.respArr, 1, "Stable", "good", "Respiratory rate is essentially flat (14.5 to 14.3rpm) — no illness signal here.")
+      this.buildMetric('Sleep Duration', 'h', this.sleepHours, 1, "Declining", "good", "Average sleep duration slipped from 8.0h to 7.2h over the last two weeks, and last night was the low point at 4.5h. Still above the 7h floor on average, but the trend and last night's short night both warrant attention."),
+      this.buildMetric('HRV', 'ms', this.hrvArr, 1, "Declining", "warn", "HRV fell from an 88.5ms weekly average to 79.6ms, and last night's reading (47.2ms) was the lowest of the 14-day window by a wide margin — consistent with the critically low recovery score."),
+      this.buildMetric('Resting HR', 'bpm', this.rhrArr, 0, "Rising", "warn", "Resting heart rate crept up from a 55.4bpm to 57.3bpm weekly average, with last night's reading at 63bpm — the highest in the 14-day window, another signal pointing to incomplete recovery."),
+      this.buildMetric('Resp. Rate', 'rpm', this.respArr, 1, "Stable", "good", "Respiratory rate is essentially flat (14.5 to 14.3 rpm), showing no signs of illness despite the drop in recovery, HRV, and sleep quality.")
     ];
 
     const bedtime = this.sparkline(this.bedtimeArr, 280, 72, 6);
@@ -2342,7 +2342,7 @@ class Component extends DCLogic {
       fg: t === 'MMA' ? 'var(--accent-strong)' : 'var(--text-tertiary)'
     }));
 
-    const studyMarks = ["", "", "×", "×", "✓", "", ""];
+    const studyMarks = ["", "", "", "", "✓", "", ""];
     const studyWeek = studyMarks.map(m => ({
       mark: m === '×' ? m : '',
       isDone: m === '✓',
@@ -2350,13 +2350,13 @@ class Component extends DCLogic {
       fg: m === '✓' ? 'var(--good)' : m === '×' ? 'var(--danger)' : 'var(--text-tertiary)'
     }));
 
-    const events = {"2": [{"label": "Legs", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "4": [{"label": "⚠ Whoop sync bug (unresolved in file)", "bg": "var(--danger-soft)", "fg": "var(--danger)"}], "6": [{"label": "Push (lift)", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}, {"label": "FoK Checkpoint 1 (overdue)", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "13": [{"label": "MMA", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "14": [{"label": "MMA", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "16": [{"label": "FoK Checkpoint 2 (due today)", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "20": [{"label": "FoK Checkpoint 3", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "29": [{"label": "FoK Checkpoint 4", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "31": [{"label": "Essay deadline", "bg": "var(--warn-soft)", "fg": "var(--warn)"}]};
+    const events = {"1": [{"label": "Task D: FoK Transition", "bg": "var(--danger-soft)", "fg": "var(--danger)"}, {"label": "Task F: Digital Hygiene", "bg": "var(--danger-soft)", "fg": "var(--danger)"}], "2": [{"label": "Legs", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "4": [{"label": "Fix Whoop sync bug", "bg": "var(--danger-soft)", "fg": "var(--danger)"}], "6": [{"label": "Push", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}, {"label": "MMA", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}, {"label": "Checkpoint 1", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "13": [{"label": "MMA", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "14": [{"label": "MMA", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "16": [{"label": "Checkpoint 2: Synthesis", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "20": [{"label": "Checkpoint 3", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "29": [{"label": "Checkpoint 4: Draft", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "31": [{"label": "Essay Deadline", "bg": "var(--warn-soft)", "fg": "var(--warn)"}]};
     const calendarCells = this.buildMonthGrid(2026, 6, events);
 
     return {
       palette,
       dateLabel: "Thursday · 16 Jul 2026",
-      focusStatement: "Recovery is at 18 — full rest today, no training. Use the freed-up time for the FoK mid-month synthesis pass (checkpoint 2 is due today, and you're only at 5 of 15 hours), and log yesterday's nutrition to start closing the 10-day gap.",
+      focusStatement: "Recovery is critically low (18) — make today a deliberate rest day: no training, log tonight's nutrition to end the 10-day gap, and use the downtime for the FoK mid-month synthesis pass due today.",
       cycleDate: "2026-07-15",
       syncStatus: "Live sync",
       recoveryScore: "18",
@@ -2365,7 +2365,7 @@ class Component extends DCLogic {
       recoveryFlag: {
         show: true,
         label: "FLAG",
-        text: "Full rest or light active recovery only today — two straight MMA days on 4.5h of sleep. Fuel target: 2,450 kcal / 145g P / 310g C / 70g F.",
+        text: "Recovery is critically low (18/100) — HRV dropped to 47.2ms and last night's sleep scored only 49%. Treat today as a full rest day; skip training. Macro targets fall back to the AMBER band per the FLAG rule: 2450 kcal / 145g protein / 310g carbs / 70g fat.",
         ...this.severityColors("danger")
       },
       metrics,
@@ -2373,12 +2373,12 @@ class Component extends DCLogic {
       bedtimeArea: bedtime.area,
       bedtimeLast: this.formatBedtime(this.bedtimeArr[this.bedtimeArr.length - 1]),
       bedtimeFirst: this.formatBedtime(this.bedtimeArr[0]),
-      bedtimeTrendWord: "Earlier",
+      bedtimeTrendWord: "Improving",
       bedtimeTrendColor,
-      bedtimeAnalysis: "Bedtime moved about 1h24m earlier over the two weeks (2:34am to 1:10am) — a real improvement, though both ends are still very late for a physical bulk phase.",
-      sleepRecommendation: "Sleep duration and HRV are both trending down while RHR trends up — the signature of accumulating fatigue from two consecutive MMA days on short sleep. Bedtime is at least moving earlier. Tonight should be an early, protected night: no screens after 11pm, asleep by 11:30pm, and treat tomorrow's recovery score as the real test of whether today's rest day worked.",
-      lastSessionTitle: "Last: 2026-07-14 — MMA (Muay Thai)",
-      trainingNote: "Second consecutive day on the mats (Jul 13 + 14). No progressive-overload target today. Last resistance session was 2026-07-06 Push (bench up to ~65kg × 4). Do not train hard today; recovery is 18.",
+      bedtimeAnalysis: "Bedtime pulled earlier by roughly 1h24m over the 14-day window (2:34am two weeks ago to 1:10am last night). The direction is positive, though both ends of the range remain later than ideal for consistent sleep debt recovery.",
+      sleepRecommendation: "The combination of critically low recovery (18), the lowest HRV and highest RHR of the 14-day window, and a 49% sleep performance score last night all point the same direction: prioritize an early, undisrupted night tonight over any training or late study. Bedtime has been trending earlier, which helps — protect that trend rather than reversing it under deadline pressure from the FoK checkpoint.",
+      lastSessionTitle: "Last: 2026-07-14 — MMA (Muay Thai training)",
+      trainingNote: "Recovery is at 18 — skip planned training today and let the body catch up. Second consecutive day back on the mats (Jul 13–14) after the mid-July gap; resume tomorrow or Saturday once HRV and sleep recover rather than pushing through today.",
       weekSessions: "2",
       weekSets: "0",
       avgStrain: "7.2",
@@ -2388,14 +2388,14 @@ class Component extends DCLogic {
       cogHoursLogged: "5.0 / 15h",
       cogProgressPct: "33",
       cogCheckpoints: [
-        this.buildCheckpoint("Checkpoint 1 — Overdue", "Second Brain vault live + Fighters_Mind MOC seeded — was due Jul 6, still in progress (10 days overdue).", "danger", true),
-        this.buildCheckpoint("Checkpoint 2 — Due Today", "Mid-month synthesis pass — themes mapped, essay spine identified. Due today, still pending.", "warn", true)
+        this.buildCheckpoint("Checkpoint 1 — Overdue", "Second Brain vault live + 7-theme MOC seeded, due 2026-07-06 — still marked In Progress, 10 days overdue.", "danger", true),
+        this.buildCheckpoint("Checkpoint 2 — Due Today", "Mid-month synthesis pass (themes mapped, essay spine identified), due 2026-07-16 — not yet started.", "warn", true)
       ],
-      cogSummary1: "The month opened with 3h of Second Brain / FoK setup work on Jul 3 (workspace organisation, Neuroplasticity theme expansion), then went dark for over a week during the training and travel disruption.",
-      cogSummary2: "Jul 14 rescued the week with a 2h reading and analysis session on GSP's The Way of the Fight — the only source engaged so far this month, with 5.0 of the 15-hour target logged.",
-      cogFocusPoints: ["Complete the mid-month synthesis pass today — map themes across all 4 sources, identify the essay spine.", "Close out the overdue Checkpoint 1 (Second Brain vault + MOC seeding) alongside it.", "Use today's forced rest day (recovery 18) as the study window instead of training."],
+      cogSummary1: "Only two study sessions logged so far this month: a 3-hour Second Brain/FoK setup session on Jul 3 and a 2-hour read-through of GSP's The Way of the Fight on Jul 14. That's 5 of the 15-hour July target, with 15 days left.",
+      cogSummary2: "Three of the four planned sources (Musashi, Marcus Aurelius/Holiday, neurobiology research) haven't been engaged yet, and both July checkpoints so far are behind — Checkpoint 1 is 10 days overdue and Checkpoint 2 is due today with no synthesis pass started.",
+      cogFocusPoints: ["Run the mid-month synthesis pass today (Checkpoint 2) — map themes covered so far and identify the essay spine.", "Close the overdue Checkpoint 1 gap: confirm the Second Brain MOC is actually seeded with all 7 themes.", "Engage at least one more source this week — Musashi or Marcus Aurelius/Holiday — three of four sources are still untouched."],
       studyWeek,
-      crossStrand: [{"n": "01", "text": "Recovery crashed to 18 (from 59 the day before) after two straight MMA days on only 4.5h of sleep. Today calls for genuine rest — no lifting, no MMA, light mobility at most."}, {"n": "02", "text": "Nutrition and creatine adherence have both gone dark for a full week+ — no nutrition_log entry in 10 days, creatine 0/7 last week — there's currently no way to confirm the 130–155g protein floor is being hit."}, {"n": "03", "text": "FoK checkpoint 1 is overdue and checkpoint 2 lands today, with only 5 of 15 required hours logged. A forced-rest physical day is the ideal window to close both checkpoints while the body recovers."}],
+      crossStrand: [{"n": "01", "text": "Recovery is critically low (18) with the lowest HRV and highest RHR of the 14-day window — treat today as a full rest day rather than pushing the training rhythm restarted on Jul 13–14."}, {"n": "02", "text": "Nutrition logging has been dark for 10 straight days (last entry Jul 6). This is now the system's biggest blind spot — log tonight's intake via night_input.md so tomorrow's AMBER-band macro targets have real data behind them."}, {"n": "03", "text": "The FoK mid-month checkpoint is due today while Checkpoint 1 sits 10 days overdue — use the enforced low-recovery rest day as a study day instead of a training day."}, {"n": "04", "text": "Two straight days of consistent MMA training (Jul 13–14) after the earlier dark week is real progress — protect it by resuming tomorrow or Saturday rather than letting today's rest day slide into another multi-day gap."}],
       monthLabel: "July 2026",
       weekdayLabels: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
       calendarCells,
@@ -2409,10 +2409,10 @@ class Component extends DCLogic {
       toggleCalendar: () => this.toggleCalendar(),
       calendarToggleLabel: this.state.calendarOpen ? '▾ Collapse' : '▸ Expand',
       nutritionToggleLabel: this.state.nutritionOpen ? '▾ Collapse' : '▸ Expand',
-      nutritionSummary: "0/145g protein · 0/2,450 kcal logged yesterday · no entry in 10 days",
-      nutritionTargets: [{"label": "Protein", "value": "0 / 145 g", "pct": 0}, {"label": "Carbohydrates", "value": "0 / 310 g", "pct": 0}, {"label": "Calories", "value": "0 / 2,450 kcal", "pct": 0}],
-      supplements: [{"name": "Creatine 5g", "status": "⬜ Not logged"}, {"name": "Zinc 15mg", "status": "✅ Taken"}, {"name": "Omega-3 2–3g", "status": "⬜ Not logged"}, {"name": "B12 1000mcg", "status": "✅ Taken"}],
-      footerLine: "Generated Thursday 16 Jul · 13:10 local · Whoop source: whoop_daily_2026-07-16_0900.xlsx (today's file; last completed cycle within it is 2026-07-15 — 2026-07-16 recovery not yet posted) · Last Task B: 2026-07-16 · Last journal: Rest day, apartment-hunting in Vilnius, restarted night habits, fixed the Whoop pipeline error."
+      nutritionSummary: "0/145g protein · 0/2450 kcal logged yesterday",
+      nutritionTargets: [{"label": "Protein", "value": "0 / 145 g", "pct": 0}, {"label": "Carbohydrates", "value": "0 / 310 g", "pct": 0}, {"label": "Calories", "value": "0 / 2450 kcal", "pct": 0}],
+      supplements: [{"name": "Creatine", "status": "⬜ Not logged"}, {"name": "Zinc", "status": "✅ Taken"}, {"name": "Omega-3", "status": "⬜ Not logged"}, {"name": "B12", "status": "✅ Taken"}],
+      footerLine: "Generated Thursday 16 Jul · 13:21 local · Last Task B: 2026-07-16 · Last journal: Rest day. Spent the whole day apartment-hunting in Vilnius — made some progress"
     };
   }
 }
