@@ -2246,18 +2246,53 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
-        <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="4">
-          <div style="background:var(--bg-card-alt); border-radius:18px; padding:18px 20px;">
-            <div style="display:flex; justify-content:space-between; align-items:baseline;">
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-tertiary);">{{ m.label }}</div>
-              <div style="font-size:12px; font-weight:700; color:{{ m.trendColor }};">{{ m.deltaLabel }}{{ m.unit }}</div>
-            </div>
-            <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:26px; margin-top:4px;">{{ m.last }}<span style="font-size:14px; color:var(--text-tertiary); font-weight:600; margin-left:3px;">{{ m.unit }}</span></div>
-            <svg viewBox="0 0 280 40" style="width:100%; height:32px; margin-top:6px; display:block;" preserveAspectRatio="none">
-              <polyline points="{{ m.miniLine }}" fill="none" stroke="{{ m.trendColor }}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
-            </svg>
+        <!-- sc-for over metrics REMOVED 2026-07-16: the runtime's template compiler does not
+             resolve {{ }} bindings placed as the ENTIRE value of an SVG geometry attribute
+             (points=/d=) — the literal unresolved text lands in the DOM and the browser throws
+             an SVG parse error. Confirmed via browser console on live GitHub Pages; text-node
+             and mixed-value attribute bindings elsewhere in this file are unaffected. Unrolled
+             into 4 static blocks with build-time-baked [[TOKEN]] placeholders (filled once per
+             day by Task A) instead of a live per-item binding. See portability.md. -->
+        <div style="background:var(--bg-card-alt); border-radius:18px; padding:18px 20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-tertiary);">Sleep Duration</div>
+            <div style="font-size:12px; font-weight:700; color:var(--good);">-0.8h</div>
           </div>
-        </sc-for>
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:26px; margin-top:4px;">4.5<span style="font-size:14px; color:var(--text-tertiary); font-weight:600; margin-left:3px;">h</span></div>
+          <svg viewBox="0 0 280 40" style="width:100%; height:32px; margin-top:6px; display:block;" preserveAspectRatio="none">
+            <polyline points="4.0,6.9 24.9,36.0 45.8,4.0 66.8,20.2 87.7,17.6 108.6,9.9 129.5,10.6 150.5,16.1 171.4,19.8 192.3,16.9 213.2,9.1 234.2,16.5 255.1,19.4 276.0,27.9" fill="none" stroke="var(--good)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </div>
+        <div style="background:var(--bg-card-alt); border-radius:18px; padding:18px 20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-tertiary);">HRV</div>
+            <div style="font-size:12px; font-weight:700; color:var(--warn);">-8.9ms</div>
+          </div>
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:26px; margin-top:4px;">47.2<span style="font-size:14px; color:var(--text-tertiary); font-weight:600; margin-left:3px;">ms</span></div>
+          <svg viewBox="0 0 280 40" style="width:100%; height:32px; margin-top:6px; display:block;" preserveAspectRatio="none">
+            <polyline points="4.0,18.7 24.9,6.5 45.8,5.9 66.8,17.1 87.7,30.2 108.6,10.6 129.5,11.1 150.5,19.9 171.4,14.8 192.3,13.3 213.2,23.7 234.2,4.0 255.1,21.3 276.0,36.0" fill="none" stroke="var(--warn)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </div>
+        <div style="background:var(--bg-card-alt); border-radius:18px; padding:18px 20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-tertiary);">Resting HR</div>
+            <div style="font-size:12px; font-weight:700; color:var(--warn);">+2bpm</div>
+          </div>
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:26px; margin-top:4px;">63<span style="font-size:14px; color:var(--text-tertiary); font-weight:600; margin-left:3px;">bpm</span></div>
+          <svg viewBox="0 0 280 40" style="width:100%; height:32px; margin-top:6px; display:block;" preserveAspectRatio="none">
+            <polyline points="4.0,32.8 24.9,36.0 45.8,36.0 66.8,32.8 87.7,7.2 108.6,26.4 129.5,26.4 150.5,26.4 171.4,29.6 192.3,29.6 213.2,7.2 234.2,36.0 255.1,23.2 276.0,4.0" fill="none" stroke="var(--warn)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </div>
+        <div style="background:var(--bg-card-alt); border-radius:18px; padding:18px 20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-tertiary);">Resp. Rate</div>
+            <div style="font-size:12px; font-weight:700; color:var(--good);">-0.2rpm</div>
+          </div>
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:26px; margin-top:4px;">14.6<span style="font-size:14px; color:var(--text-tertiary); font-weight:600; margin-left:3px;">rpm</span></div>
+          <svg viewBox="0 0 280 40" style="width:100%; height:32px; margin-top:6px; display:block;" preserveAspectRatio="none">
+            <polyline points="4.0,31.4 24.9,24.6 45.8,29.1 66.8,24.6 87.7,4.0 108.6,20.0 129.5,24.6 150.5,26.9 171.4,22.3 192.3,31.4 213.2,24.6 234.2,31.4 255.1,36.0 276.0,20.0" fill="none" stroke="var(--good)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </div>
       </div>
     </div>
 
@@ -2270,40 +2305,87 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
     <!-- big charts -->
     <div style="margin-top:36px; font-family:'Sora',sans-serif; font-weight:700; font-size:20px;">Sleep &amp; Vitals Trends</div>
     <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:18px;">
-      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="4">
-        <div style="background:var(--bg-card-alt); border-radius:20px; padding:24px 26px;">
-          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
-            <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:17px;">{{ m.label }}</div>
-            <div style="font-size:13px; font-weight:700; color:{{ m.trendColor }}; text-transform:uppercase; letter-spacing:0.03em;">{{ m.trendWord }}</div>
-          </div>
-          <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:10px;">
-            <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:34px;">{{ m.weekAvg }}<span style="font-size:15px; color:var(--text-tertiary); font-weight:600;">{{ m.unit }} avg / 7d</span></div>
-            <div style="font-size:13px; color:var(--text-tertiary);">vs {{ m.prevWeekAvg }}{{ m.unit }} prior week</div>
-          </div>
-          <svg viewBox="0 0 280 72" style="width:100%; height:100px; display:block;" preserveAspectRatio="none">
-            <path d="{{ m.area }}" fill="{{ m.trendColor }}" opacity="0.14"></path>
-            <polyline points="{{ m.line }}" fill="none" stroke="{{ m.trendColor }}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
-          </svg>
-          <div style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin-top:14px;">{{ m.analysis }}</div>
+      <!-- sc-for over metrics REMOVED 2026-07-16 — same SVG-attribute-binding bug as the mini
+           sparkline grid above. Unrolled into 4 static blocks; see note above. -->
+      <div style="background:var(--bg-card-alt); border-radius:20px; padding:24px 26px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:17px;">Sleep Duration</div>
+          <div style="font-size:13px; font-weight:700; color:var(--good); text-transform:uppercase; letter-spacing:0.03em;">Declining</div>
         </div>
-      </sc-for>
+        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:10px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:34px;">7.2<span style="font-size:15px; color:var(--text-tertiary); font-weight:600;">h avg / 7d</span></div>
+          <div style="font-size:13px; color:var(--text-tertiary);">vs 8.0h prior week</div>
+        </div>
+        <svg viewBox="0 0 280 72" style="width:100%; height:100px; display:block;" preserveAspectRatio="none">
+          <path d="M6.0,66 L6.0,11.5 L26.6,66.0 L47.2,6.0 L67.8,36.3 L88.5,31.5 L109.1,17.0 L129.7,18.4 L150.3,28.8 L170.9,35.7 L191.5,30.1 L212.2,15.7 L232.8,29.4 L253.4,35.0 L274.0,50.8 L274.0,66 Z" fill="var(--good)" opacity="0.14"></path>
+          <polyline points="6.0,11.5 26.6,66.0 47.2,6.0 67.8,36.3 88.5,31.5 109.1,17.0 129.7,18.4 150.3,28.8 170.9,35.7 191.5,30.1 212.2,15.7 232.8,29.4 253.4,35.0 274.0,50.8" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+        <div style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin-top:14px;">Average sleep duration slipped from 8.0h to 7.2h over the last two weeks, and last night was the low point at 4.5h. Still above the 7h floor on average, but the trend and last night's short night both warrant attention.</div>
+      </div>
+      <div style="background:var(--bg-card-alt); border-radius:20px; padding:24px 26px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:17px;">HRV</div>
+          <div style="font-size:13px; font-weight:700; color:var(--warn); text-transform:uppercase; letter-spacing:0.03em;">Declining</div>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:10px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:34px;">79.6<span style="font-size:15px; color:var(--text-tertiary); font-weight:600;">ms avg / 7d</span></div>
+          <div style="font-size:13px; color:var(--text-tertiary);">vs 88.5ms prior week</div>
+        </div>
+        <svg viewBox="0 0 280 72" style="width:100%; height:100px; display:block;" preserveAspectRatio="none">
+          <path d="M6.0,66 L6.0,33.6 L26.6,10.6 L47.2,9.5 L67.8,30.5 L88.5,55.1 L109.1,18.4 L129.7,19.4 L150.3,35.8 L170.9,26.3 L191.5,23.4 L212.2,42.9 L232.8,6.0 L253.4,38.4 L274.0,66.0 L274.0,66 Z" fill="var(--warn)" opacity="0.14"></path>
+          <polyline points="6.0,33.6 26.6,10.6 47.2,9.5 67.8,30.5 88.5,55.1 109.1,18.4 129.7,19.4 150.3,35.8 170.9,26.3 191.5,23.4 212.2,42.9 232.8,6.0 253.4,38.4 274.0,66.0" fill="none" stroke="var(--warn)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+        <div style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin-top:14px;">HRV fell from an 88.5ms weekly average to 79.6ms, and last night's reading (47.2ms) was the lowest of the 14-day window by a wide margin — consistent with the critically low recovery score.</div>
+      </div>
+      <div style="background:var(--bg-card-alt); border-radius:20px; padding:24px 26px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:17px;">Resting HR</div>
+          <div style="font-size:13px; font-weight:700; color:var(--warn); text-transform:uppercase; letter-spacing:0.03em;">Rising</div>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:10px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:34px;">57<span style="font-size:15px; color:var(--text-tertiary); font-weight:600;">bpm avg / 7d</span></div>
+          <div style="font-size:13px; color:var(--text-tertiary);">vs 55bpm prior week</div>
+        </div>
+        <svg viewBox="0 0 280 72" style="width:100%; height:100px; display:block;" preserveAspectRatio="none">
+          <path d="M6.0,66 L6.0,60.0 L26.6,66.0 L47.2,66.0 L67.8,60.0 L88.5,12.0 L109.1,48.0 L129.7,48.0 L150.3,48.0 L170.9,54.0 L191.5,54.0 L212.2,12.0 L232.8,66.0 L253.4,42.0 L274.0,6.0 L274.0,66 Z" fill="var(--warn)" opacity="0.14"></path>
+          <polyline points="6.0,60.0 26.6,66.0 47.2,66.0 67.8,60.0 88.5,12.0 109.1,48.0 129.7,48.0 150.3,48.0 170.9,54.0 191.5,54.0 212.2,12.0 232.8,66.0 253.4,42.0 274.0,6.0" fill="none" stroke="var(--warn)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+        <div style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin-top:14px;">Resting heart rate crept up from a 55.4bpm to 57.3bpm weekly average, with last night's reading at 63bpm — the highest in the 14-day window, another signal pointing to incomplete recovery.</div>
+      </div>
+      <div style="background:var(--bg-card-alt); border-radius:20px; padding:24px 26px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:17px;">Resp. Rate</div>
+          <div style="font-size:13px; font-weight:700; color:var(--good); text-transform:uppercase; letter-spacing:0.03em;">Stable</div>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:10px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:34px;">14.3<span style="font-size:15px; color:var(--text-tertiary); font-weight:600;">rpm avg / 7d</span></div>
+          <div style="font-size:13px; color:var(--text-tertiary);">vs 14.5rpm prior week</div>
+        </div>
+        <svg viewBox="0 0 280 72" style="width:100%; height:100px; display:block;" preserveAspectRatio="none">
+          <path d="M6.0,66 L6.0,57.4 L26.6,44.6 L47.2,53.1 L67.8,44.6 L88.5,6.0 L109.1,36.0 L129.7,44.6 L150.3,48.9 L170.9,40.3 L191.5,57.4 L212.2,44.6 L232.8,57.4 L253.4,66.0 L274.0,36.0 L274.0,66 Z" fill="var(--good)" opacity="0.14"></path>
+          <polyline points="6.0,57.4 26.6,44.6 47.2,53.1 67.8,44.6 88.5,6.0 109.1,36.0 129.7,44.6 150.3,48.9 170.9,40.3 191.5,57.4 212.2,44.6 232.8,57.4 253.4,66.0 274.0,36.0" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+        <div style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin-top:14px;">Respiratory rate is essentially flat (14.5 to 14.3 rpm), showing no signs of illness despite the drop in recovery, HRV, and sleep quality.</div>
+      </div>
 
       <div style="background:var(--bg-card-alt); border-radius:20px; padding:24px 26px; grid-column: span 2;">
+        <!-- bedtimeArea/bedtimeLine had the same broken SVG-attribute binding; baked as tokens
+             along with the rest of this block for consistency. -->
         <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
           <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:17px;">Bedtime Drift</div>
-          <div style="font-size:13px; font-weight:700; color:{{ bedtimeTrendColor }}; text-transform:uppercase; letter-spacing:0.03em;">{{ bedtimeTrendWord }}</div>
+          <div style="font-size:13px; font-weight:700; color:var(--good); text-transform:uppercase; letter-spacing:0.03em;">Improving</div>
         </div>
         <div style="display:grid; grid-template-columns:180px 1fr; gap:24px; align-items:center;">
           <div>
-            <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:30px;">{{ bedtimeLast }}</div>
-            <div style="font-size:13px; color:var(--text-tertiary); margin-top:2px;">last night · was {{ bedtimeFirst }} two weeks ago</div>
+            <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:30px;">1:10AM</div>
+            <div style="font-size:13px; color:var(--text-tertiary); margin-top:2px;">last night · was 2:34AM two weeks ago</div>
           </div>
           <svg viewBox="0 0 280 72" style="width:100%; height:90px; display:block;" preserveAspectRatio="none">
-            <path d="{{ bedtimeArea }}" fill="{{ bedtimeTrendColor }}" opacity="0.12"></path>
-            <polyline points="{{ bedtimeLine }}" fill="none" stroke="{{ bedtimeTrendColor }}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <path d="M6.0,66 L6.0,22.4 L26.6,29.4 L47.2,35.3 L67.8,6.0 L88.5,9.5 L109.1,50.4 L129.7,66.0 L150.3,39.9 L170.9,41.2 L191.5,15.7 L212.2,44.2 L232.8,40.0 L253.4,31.9 L274.0,36.5 L274.0,66 Z" fill="var(--good)" opacity="0.12"></path>
+            <polyline points="6.0,22.4 26.6,29.4 47.2,35.3 67.8,6.0 88.5,9.5 109.1,50.4 129.7,66.0 150.3,39.9 170.9,41.2 191.5,15.7 212.2,44.2 232.8,40.0 253.4,31.9 274.0,36.5" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
           </svg>
         </div>
-        <div style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin-top:14px;">{{ bedtimeAnalysis }}</div>
+        <div style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin-top:14px;">Bedtime pulled earlier by roughly 1h24m over the 14-day window (2:34am two weeks ago to 1:10am last night). The direction is positive, though both ends of the range remain later than ideal for consistent sleep debt recovery.</div>
       </div>
     </div>
 
@@ -2712,7 +2794,7 @@ class Component extends DCLogic {
       nutritionSummary: "0/145g protein · 0/2450 kcal logged yesterday",
       nutritionTargets: [{"label": "Protein", "value": "0 / 145 g", "pct": 0}, {"label": "Carbohydrates", "value": "0 / 310 g", "pct": 0}, {"label": "Calories", "value": "0 / 2450 kcal", "pct": 0}],
       supplements: [{"name": "Creatine", "status": "⬜ Not logged"}, {"name": "Zinc", "status": "✅ Taken"}, {"name": "Omega-3", "status": "⬜ Not logged"}, {"name": "B12", "status": "✅ Taken"}],
-      footerLine: "Generated Thursday 16 Jul · 16:21 local · Last Task B: 2026-07-16 · Last journal: Rest day. Spent the whole day apartment-hunting in Vilnius — made some progress"
+      footerLine: "Generated Thursday 16 Jul · 17:05 local · Last Task B: 2026-07-16 · Last journal: Rest day. Spent the whole day apartment-hunting in Vilnius — made some progress"
     };
   }
 }
