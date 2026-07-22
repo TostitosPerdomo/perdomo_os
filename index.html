@@ -2160,6 +2160,17 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
     <div style="font-family: 'Sora',sans-serif; font-weight: 600; font-size: 12px; color: var(--shell-value); text-align:right; flex-shrink:0;">{{ dateLabel }}</div>
   </div>
 
+  <!-- WHOOP DATA ALERT -->
+  <sc-if value="{{ whoopAlertShow }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex; align-items:flex-start; gap:12px; border-radius:18px; padding:18px 18px; margin-bottom:18px; background:var(--danger-soft); border:2px solid var(--danger); box-shadow: 0 10px 22px -14px oklch(54% 0.17 25 / 0.5);">
+      <div style="font-size:26px; line-height:1; flex-shrink:0;">⚠️</div>
+      <div>
+        <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:15px; letter-spacing:0.03em; color:var(--danger); text-transform:uppercase;">{{ whoopAlertTitle }}</div>
+        <div style="font-size:13.5px; line-height:1.55; color:var(--text-primary); margin-top:6px;">{{ whoopAlertText }}</div>
+      </div>
+    </div>
+  </sc-if>
+
   <!-- TODAY'S FOCUS -->
   <div style="border-radius: 20px; padding: 22px 20px; margin-bottom: 18px; box-shadow: 0 14px 28px -16px oklch(30% 0.05 40 / 0.4); background-color: var(--feature-bg);">
     <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--on-accent); opacity:0.75; margin-bottom:10px;">Today's Focus</div>
@@ -2194,41 +2205,41 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
       <div style="background:var(--bg-card-alt); border-radius:14px; padding:14px 14px;">
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <div style="font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-tertiary);">Sleep Duration</div>
-          <div style="font-size:11px; font-weight:700; color:var(--good);">-0.4h</div>
+          <div style="font-size:11px; font-weight:700; color:var(--good);">-0.7h</div>
         </div>
         <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:20px; margin-top:3px;">8.4<span style="font-size:12px; color:var(--text-tertiary); font-weight:600; margin-left:2px;">h</span></div>
         <svg viewBox="0 0 280 40" style="width:100%; height:26px; margin-top:5px; display:block;" preserveAspectRatio="none">
-          <polyline points="4.0,36.0 24.9,4.0 45.8,20.3 66.8,17.7 87.7,9.9 108.6,10.5 129.5,16.2 150.5,19.9 171.4,17.0 192.3,9.0 213.2,16.5 234.2,19.5 255.1,28.0 276.0,13.7" fill="none" stroke="var(--good)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <polyline points="4.0,4.0 24.9,25.6 45.8,22.3 66.8,11.8 87.7,12.6 108.6,20.2 129.5,25.2 150.5,21.3 171.4,10.7 192.3,20.7 213.2,24.6 234.2,36.0 255.1,16.9 276.0,16.8" fill="none" stroke="var(--good)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
         </svg>
       </div>
       <div style="background:var(--bg-card-alt); border-radius:14px; padding:14px 14px;">
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <div style="font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-tertiary);">HRV</div>
-          <div style="font-size:11px; font-weight:700; color:var(--warn);">-6.2ms</div>
+          <div style="font-size:11px; font-weight:700; color:var(--warn);">-8.2ms</div>
         </div>
-        <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:20px; margin-top:3px;">95.0<span style="font-size:12px; color:var(--text-tertiary); font-weight:600; margin-left:2px;">ms</span></div>
+        <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:20px; margin-top:3px;">57.3<span style="font-size:12px; color:var(--text-tertiary); font-weight:600; margin-left:2px;">ms</span></div>
         <svg viewBox="0 0 280 40" style="width:100%; height:26px; margin-top:5px; display:block;" preserveAspectRatio="none">
-          <polyline points="4.0,6.5 24.9,5.9 45.8,17.1 66.8,30.2 87.7,10.6 108.6,11.1 129.5,19.9 150.5,14.8 171.4,13.3 192.3,23.7 213.2,4.0 234.2,21.3 255.1,36.0 276.0,10.9" fill="none" stroke="var(--warn)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <polyline points="4.0,5.9 24.9,17.1 45.8,30.2 66.8,10.6 87.7,11.2 108.6,19.9 129.5,14.8 150.5,13.3 171.4,23.7 192.3,4.0 213.2,21.3 234.2,36.0 255.1,10.9 276.0,30.7" fill="none" stroke="var(--warn)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
         </svg>
       </div>
       <div style="background:var(--bg-card-alt); border-radius:14px; padding:14px 14px;">
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <div style="font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-tertiary);">Resting HR</div>
-          <div style="font-size:11px; font-weight:700; color:var(--warn);">+1bpm</div>
+          <div style="font-size:11px; font-weight:700; color:var(--warn);">+2bpm</div>
         </div>
-        <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:20px; margin-top:3px;">53<span style="font-size:12px; color:var(--text-tertiary); font-weight:600; margin-left:2px;">bpm</span></div>
+        <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:20px; margin-top:3px;">60<span style="font-size:12px; color:var(--text-tertiary); font-weight:600; margin-left:2px;">bpm</span></div>
         <svg viewBox="0 0 280 40" style="width:100%; height:26px; margin-top:5px; display:block;" preserveAspectRatio="none">
-          <polyline points="4.0,36.0 24.9,36.0 45.8,32.8 66.8,7.2 87.7,26.4 108.6,26.4 129.5,26.4 150.5,29.6 171.4,29.6 192.3,7.2 213.2,36.0 234.2,23.2 255.1,4.0 276.0,36.0" fill="none" stroke="var(--warn)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <polyline points="4.0,36.0 24.9,32.8 45.8,7.2 66.8,26.4 87.7,26.4 108.6,26.4 129.5,29.6 150.5,29.6 171.4,7.2 192.3,36.0 213.2,23.2 234.2,4.0 255.1,36.0 276.0,13.6" fill="none" stroke="var(--warn)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
         </svg>
       </div>
       <div style="background:var(--bg-card-alt); border-radius:14px; padding:14px 14px;">
         <div style="display:flex; justify-content:space-between; align-items:baseline;">
           <div style="font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-tertiary);">Resp. Rate</div>
-          <div style="font-size:11px; font-weight:700; color:var(--good);">-0.4rpm</div>
+          <div style="font-size:11px; font-weight:700; color:var(--good);">-0.3rpm</div>
         </div>
-        <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:20px; margin-top:3px;">13.5<span style="font-size:12px; color:var(--text-tertiary); font-weight:600; margin-left:2px;">rpm</span></div>
+        <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:20px; margin-top:3px;">14.8<span style="font-size:12px; color:var(--text-tertiary); font-weight:600; margin-left:2px;">rpm</span></div>
         <svg viewBox="0 0 280 40" style="width:100%; height:26px; margin-top:5px; display:block;" preserveAspectRatio="none">
-          <polyline points="4.0,20.0 24.9,23.6 45.8,20.0 66.8,4.0 87.7,16.4 108.6,20.0 129.5,21.8 150.5,18.2 171.4,25.3 192.3,20.0 213.2,25.3 234.2,28.9 255.1,16.4 276.0,36.0" fill="none" stroke="var(--good)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <polyline points="4.0,23.4 24.9,21.3 45.8,4.0 66.8,16.2 87.7,20.2 108.6,23.1 129.5,18.9 150.5,26.6 171.4,20.7 192.3,25.6 213.2,29.8 234.2,17.0 255.1,36.0 276.0,13.8" fill="none" stroke="var(--good)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
         </svg>
       </div>
     </div>
@@ -2249,14 +2260,14 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
           <div style="font-size:11.5px; font-weight:700; color:var(--good); text-transform:uppercase; letter-spacing:0.03em;">Declining</div>
         </div>
         <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; margin-bottom:8px;">
-          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:26px;">7.3<span style="font-size:13px; color:var(--text-tertiary); font-weight:600;">h avg / 7d</span></div>
-          <div style="font-size:11.5px; color:var(--text-tertiary);">vs 7.6h prior week</div>
+          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:26px;">7.5<span style="font-size:13px; color:var(--text-tertiary); font-weight:600;">h avg / 7d</span></div>
+          <div style="font-size:11.5px; color:var(--text-tertiary);">vs 8.3h prior week</div>
         </div>
         <svg viewBox="0 0 280 72" style="width:100%; height:80px; display:block;" preserveAspectRatio="none">
-          <path d="M6.0,66 L6.0,66.0 L26.6,6.0 L47.2,36.5 L67.8,31.7 L88.5,17.0 L109.1,18.2 L129.7,28.9 L150.3,35.8 L170.9,30.4 L191.5,15.4 L212.2,29.5 L232.8,35.0 L253.4,51.1 L274.0,24.1 L274.0,66 Z" fill="var(--good)" opacity="0.14"></path>
-          <polyline points="6.0,66.0 26.6,6.0 47.2,36.5 67.8,31.7 88.5,17.0 109.1,18.2 129.7,28.9 150.3,35.8 170.9,30.4 191.5,15.4 212.2,29.5 232.8,35.0 253.4,51.1 274.0,24.1" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <path d="M6.0,66 L6.0,6.0 L26.6,46.6 L47.2,40.2 L67.8,20.6 L88.5,22.2 L109.1,36.5 L129.7,45.7 L150.3,38.5 L170.9,18.5 L191.5,37.3 L212.2,44.7 L232.8,66.0 L253.4,30.1 L274.0,30.0 L274.0,66 Z" fill="var(--good)" opacity="0.14"></path>
+          <polyline points="6.0,6.0 26.6,46.6 47.2,40.2 67.8,20.6 88.5,22.2 109.1,36.5 129.7,45.7 150.3,38.5 170.9,18.5 191.5,37.3 212.2,44.7 232.8,66.0 253.4,30.1 274.0,30.0" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
         </svg>
-        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">Weekly average slipped from 7.6h to 7.3h (-0.4h), still above the 7h floor. Last reading (Jul 16) was 8.4h, but this whole window is 6 days stale — no sync since Jul 16.</div>
+        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">Average sleep duration slipped from 8.26h to 7.53h over the 14-day window, with last night's reading at 8.4h. Still above the 7h floor on average, so this is a soft trend to watch rather than an acute problem.</div>
       </div>
       <div style="background:var(--bg-card-alt); border-radius:16px; padding:18px 18px;">
         <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
@@ -2264,14 +2275,14 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
           <div style="font-size:11.5px; font-weight:700; color:var(--warn); text-transform:uppercase; letter-spacing:0.03em;">Declining</div>
         </div>
         <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; margin-bottom:8px;">
-          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:26px;">82.0<span style="font-size:13px; color:var(--text-tertiary); font-weight:600;">ms avg / 7d</span></div>
-          <div style="font-size:11.5px; color:var(--text-tertiary);">vs 88.2ms prior week</div>
+          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:26px;">77.7<span style="font-size:13px; color:var(--text-tertiary); font-weight:600;">ms avg / 7d</span></div>
+          <div style="font-size:11.5px; color:var(--text-tertiary);">vs 85.9ms prior week</div>
         </div>
         <svg viewBox="0 0 280 72" style="width:100%; height:80px; display:block;" preserveAspectRatio="none">
-          <path d="M6.0,66 L6.0,10.6 L26.6,9.5 L47.2,30.5 L67.8,55.1 L88.5,18.4 L109.1,19.4 L129.7,35.8 L150.3,26.3 L170.9,23.4 L191.5,42.9 L212.2,6.0 L232.8,38.4 L253.4,66.0 L274.0,18.9 L274.0,66 Z" fill="var(--warn)" opacity="0.14"></path>
-          <polyline points="6.0,10.6 26.6,9.5 47.2,30.5 67.8,55.1 88.5,18.4 109.1,19.4 129.7,35.8 150.3,26.3 170.9,23.4 191.5,42.9 212.2,6.0 232.8,38.4 253.4,66.0 274.0,18.9" fill="none" stroke="var(--warn)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <path d="M6.0,66 L6.0,9.6 L26.6,30.5 L47.2,55.1 L67.8,18.4 L88.5,19.4 L109.1,35.7 L129.7,26.3 L150.3,23.5 L170.9,43.0 L191.5,6.0 L212.2,38.4 L232.8,66.0 L253.4,18.9 L274.0,56.1 L274.0,66 Z" fill="var(--warn)" opacity="0.14"></path>
+          <polyline points="6.0,9.6 26.6,30.5 47.2,55.1 67.8,18.4 88.5,19.4 109.1,35.7 129.7,26.3 150.3,23.5 170.9,43.0 191.5,6.0 212.2,38.4 232.8,66.0 253.4,18.9 274.0,56.1" fill="none" stroke="var(--warn)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
         </svg>
-        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">HRV fell from an 88.2ms to 82.0ms weekly average (-6.2ms, within the warn band). Last reading (Jul 16) was 95.0ms, actually a bounce-back from the Jul 15 low of 47.2ms — but again, 6 days old.</div>
+        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">HRV fell from an 85.9ms to 77.7ms weekly average (about 9.6% down), with last night's reading at 57.3ms — the lowest of the window. Consistent with the adequate-but-not-optimal recovery score.</div>
       </div>
       <div style="background:var(--bg-card-alt); border-radius:16px; padding:18px 18px;">
         <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
@@ -2279,14 +2290,14 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
           <div style="font-size:11.5px; font-weight:700; color:var(--warn); text-transform:uppercase; letter-spacing:0.03em;">Rising</div>
         </div>
         <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; margin-bottom:8px;">
-          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:26px;">57<span style="font-size:13px; color:var(--text-tertiary); font-weight:600;">bpm avg / 7d</span></div>
+          <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:26px;">58<span style="font-size:13px; color:var(--text-tertiary); font-weight:600;">bpm avg / 7d</span></div>
           <div style="font-size:11.5px; color:var(--text-tertiary);">vs 56bpm prior week</div>
         </div>
         <svg viewBox="0 0 280 72" style="width:100%; height:80px; display:block;" preserveAspectRatio="none">
-          <path d="M6.0,66 L6.0,66.0 L26.6,66.0 L47.2,60.0 L67.8,12.0 L88.5,48.0 L109.1,48.0 L129.7,48.0 L150.3,54.0 L170.9,54.0 L191.5,12.0 L212.2,66.0 L232.8,42.0 L253.4,6.0 L274.0,66.0 L274.0,66 Z" fill="var(--warn)" opacity="0.14"></path>
-          <polyline points="6.0,66.0 26.6,66.0 47.2,60.0 67.8,12.0 88.5,48.0 109.1,48.0 129.7,48.0 150.3,54.0 170.9,54.0 191.5,12.0 212.2,66.0 232.8,42.0 253.4,6.0 274.0,66.0" fill="none" stroke="var(--warn)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <path d="M6.0,66 L6.0,66.0 L26.6,60.0 L47.2,12.0 L67.8,48.0 L88.5,48.0 L109.1,48.0 L129.7,54.0 L150.3,54.0 L170.9,12.0 L191.5,66.0 L212.2,42.0 L232.8,6.0 L253.4,66.0 L274.0,24.0 L274.0,66 Z" fill="var(--warn)" opacity="0.14"></path>
+          <polyline points="6.0,66.0 26.6,60.0 47.2,12.0 67.8,48.0 88.5,48.0 109.1,48.0 129.7,54.0 150.3,54.0 170.9,12.0 191.5,66.0 212.2,42.0 232.8,6.0 253.4,66.0 274.0,24.0" fill="none" stroke="var(--warn)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
         </svg>
-        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">Resting heart rate crept up from a 55.7bpm to 56.9bpm weekly average (+1.1bpm, warn band). Last reading (Jul 16) was 53bpm, the best in the window — but no fresher data exists to confirm the current trend.</div>
+        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">Resting heart rate crept up from a 56.0bpm to 57.6bpm weekly average (about 2.8%), with last night's reading at 60bpm — a mild signal alongside the HRV dip, not a large one.</div>
       </div>
       <div style="background:var(--bg-card-alt); border-radius:16px; padding:18px 18px;">
         <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
@@ -2298,10 +2309,10 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
           <div style="font-size:11.5px; color:var(--text-tertiary);">vs 14.5rpm prior week</div>
         </div>
         <svg viewBox="0 0 280 72" style="width:100%; height:80px; display:block;" preserveAspectRatio="none">
-          <path d="M6.0,66 L6.0,36.0 L26.6,42.7 L47.2,36.0 L67.8,6.0 L88.5,29.3 L109.1,36.0 L129.7,39.3 L150.3,32.7 L170.9,46.0 L191.5,36.0 L212.2,46.0 L232.8,52.7 L253.4,29.3 L274.0,66.0 L274.0,66 Z" fill="var(--good)" opacity="0.14"></path>
-          <polyline points="6.0,36.0 26.6,42.7 47.2,36.0 67.8,6.0 88.5,29.3 109.1,36.0 129.7,39.3 150.3,32.7 170.9,46.0 191.5,36.0 212.2,46.0 232.8,52.7 253.4,29.3 274.0,66.0" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <path d="M6.0,66 L6.0,42.4 L26.6,38.4 L47.2,6.0 L67.8,28.8 L88.5,36.4 L109.1,41.9 L129.7,33.9 L150.3,48.4 L170.9,37.4 L191.5,46.4 L212.2,54.5 L232.8,30.4 L253.4,66.0 L274.0,24.3 L274.0,66 Z" fill="var(--good)" opacity="0.14"></path>
+          <polyline points="6.0,42.4 26.6,38.4 47.2,6.0 67.8,28.8 88.5,36.4 109.1,41.9 129.7,33.9 150.3,48.4 170.9,37.4 191.5,46.4 212.2,54.5 232.8,30.4 253.4,66.0 274.0,24.3" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
         </svg>
-        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">Respiratory rate is essentially flat (14.5 to 14.2 rpm), no signs of illness in the available data. Last reading Jul 16.</div>
+        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">Respiratory rate is essentially flat (14.5 to 14.2 rpm), showing no signs of illness despite the softer recovery, HRV, and sleep trend.</div>
       </div>
 
       <div style="background:var(--bg-card-alt); border-radius:16px; padding:18px 18px;">
@@ -2313,15 +2324,15 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
         </div>
         <div style="display:flex; flex-direction:column; gap:14px;">
           <div>
-            <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:24px;">12:21AM</div>
-            <div style="font-size:11.5px; color:var(--text-tertiary); margin-top:2px;">last night · was 1:52AM two weeks ago</div>
+            <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:24px;">12:19AM</div>
+            <div style="font-size:11.5px; color:var(--text-tertiary); margin-top:2px;">last night · was 1:17AM two weeks ago</div>
           </div>
           <svg viewBox="0 0 280 72" style="width:100%; height:76px; display:block;" preserveAspectRatio="none">
-            <path d="M6.0,66 L6.0,29.4 L26.6,35.1 L47.2,6.0 L67.8,9.4 L88.5,50.3 L109.1,66.0 L129.7,39.8 L150.3,41.1 L170.9,15.6 L191.5,44.2 L212.2,39.9 L232.8,31.8 L253.4,36.4 L274.0,44.7 L274.0,66 Z" fill="var(--good)" opacity="0.12"></path>
-            <polyline points="6.0,29.4 26.6,35.1 47.2,6.0 67.8,9.4 88.5,50.3 109.1,66.0 129.7,39.8 150.3,41.1 170.9,15.6 191.5,44.2 212.2,39.9 232.8,31.8 253.4,36.4 274.0,44.7" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <path d="M6.0,66 L6.0,35.3 L26.6,6.0 L47.2,9.5 L67.8,50.4 L88.5,66.0 L109.1,39.9 L129.7,41.2 L150.3,15.7 L170.9,44.2 L191.5,40.0 L212.2,31.9 L232.8,36.5 L253.4,44.9 L274.0,45.0 L274.0,66 Z" fill="var(--good)" opacity="0.12"></path>
+            <polyline points="6.0,35.3 26.6,6.0 47.2,9.5 67.8,50.4 88.5,66.0 109.1,39.9 129.7,41.2 150.3,15.7 170.9,44.2 191.5,40.0 212.2,31.9 232.8,36.5 253.4,44.9 274.0,45.0" fill="none" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
           </svg>
         </div>
-        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">Bedtime pulled earlier by about 1h30m across the 14-day window (1:52am on Jun 22 to 12:21am on Jul 16). Direction is positive, but there's been no fresh reading in 6 days to confirm it's held.</div>
+        <div style="font-size:13px; line-height:1.55; color:var(--text-secondary); margin-top:12px;">Bedtime pulled earlier by roughly 58 minutes over the 14-day window (1:17AM to 12:19AM). The direction is positive; protecting it matters more than the recovery dip right now.</div>
       </div>
     </div>
 
@@ -2348,11 +2359,26 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
       <div style="background:var(--bg-card-alt); border-radius:14px; padding:14px 16px; grid-column: span 2;">
         <div style="font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-tertiary);">Avg Daily Strain</div>
         <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:24px; margin-top:5px;">{{ avgStrain }}</div>
+        <sc-if value="{{ strainUntrackedShow }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:10px; color:var(--text-tertiary); margin-top:4px;">excl. {{ strainUntrackedWeekCount }} untracked MMA/Muay Thai day(s)</div>
+        </sc-if>
       </div>
     </div>
 
     <div style="margin-top:22px;">
-      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 10px;">Last 7 Days</div>
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 10px;">Last 14 Days</div>
+      <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-tertiary); margin-bottom:6px;">8–14 Days Ago</div>
+      <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:5px; margin-bottom:10px;">
+        <sc-for list="{{ trainingWeekPrev }}" as="d" hint-placeholder-count="7">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+            <div style="font-family:'Sora',sans-serif; font-size:11px; font-weight:700; color:var(--text-primary);">{{ d.dow }}</div>
+            <div style="width:100%; height:44px; border-radius:10px; background:{{ d.bg }}; display:flex; align-items:center; justify-content:center;">
+              <span style="font-family:'Sora',sans-serif; font-weight:700; font-size:9.5px; color:{{ d.fg }};">{{ d.tag }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-tertiary); margin-bottom:6px;">Last 7 Days</div>
       <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:5px;">
         <sc-for list="{{ trainingWeek }}" as="d" hint-placeholder-count="7">
           <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
@@ -2364,6 +2390,190 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
         </sc-for>
       </div>
     </div>
+
+    <!-- WEEKLY VOLUME TREND -->
+    <div style="margin-top:24px;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+        <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:15px;">Weekly Volume Trend</div>
+        <div style="font-size:11.5px; color:var(--text-tertiary);">{{ volumeWeeksLabel }}</div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; margin-bottom:8px;">
+        <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:26px;">{{ volumeLast }}<span style="font-size:13px; color:var(--text-tertiary); font-weight:600;"> sets this week</span></div>
+        <div style="font-size:11.5px; font-weight:700; color:var(--accent-strong);">{{ volumeDeltaLabel }} vs last week</div>
+      </div>
+      <svg viewBox="0 0 280 72" style="width:100%; height:80px; display:block;" preserveAspectRatio="none">
+        <path d="M6.0,66 L6.0,66.0 L35.8,66.0 L65.6,66.0 L95.3,6.0 L125.1,66.0 L154.9,66.0 L184.7,31.0 L214.4,11.0 L244.2,66.0 L274.0,66.0 L274.0,66 Z" fill="var(--accent)" opacity="0.14"></path>
+        <polyline points="6.0,66.0 35.8,66.0 65.6,66.0 95.3,6.0 125.1,66.0 154.9,66.0 184.7,31.0 214.4,11.0 244.2,66.0 274.0,66.0" fill="none" stroke="var(--accent-strong)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+      </svg>
+    </div>
+
+    <!-- STRAIN VS RECOVERY OVERLAY -->
+    <div style="margin-top:24px;">
+      <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:15px; margin-bottom:6px;">Strain vs. Recovery — Last 14 Days</div>
+      <div style="display:flex; gap:14px; font-size:11px; color:var(--text-secondary); margin-bottom:8px;">
+        <div style="display:flex; align-items:center; gap:5px;"><span style="width:14px; height:2.6px; background:var(--accent-strong); display:inline-block; border-radius:2px;"></span>Daily Strain</div>
+        <div style="display:flex; align-items:center; gap:5px;"><span style="width:14px; height:2.6px; background:var(--good); display:inline-block; border-radius:2px;"></span>Recovery Score</div>
+      </div>
+      <svg viewBox="0 0 280 72" style="width:100%; height:80px; display:block;" preserveAspectRatio="none">
+        <polyline points="6.0,62.1 26.6,29.2 47.2,28.3 67.8,38.4 88.5,64.2 109.1,42.4 129.7,62.1 150.3,6.0 170.9,48.5 191.5,17.8 212.2,34.5 232.8,62.5 253.4,65.6 274.0,66.0" fill="none" stroke="var(--accent-strong)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        <polyline points="6.0,13.6 26.6,34.9 47.2,55.4 67.8,21.2 88.5,20.4 109.1,35.6 129.7,29.5 150.3,21.2 170.9,36.4 191.5,6.0 212.2,34.9 232.8,66.0 253.4,15.9 274.0,48.5" fill="none" stroke="var(--good)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,3"></polyline>
+        <circle cx="191.5" cy="4" r="2.5" fill="var(--text-tertiary)" /><circle cx="212.2" cy="4" r="2.5" fill="var(--text-tertiary)" /><circle cx="274.0" cy="4" r="2.5" fill="var(--text-tertiary)" />
+      </svg>
+      <div style="font-size:11.5px; color:var(--text-tertiary); margin-top:6px;">Each line is scaled to its own 14-day range — watch for strain spikes that aren't followed by a recovery rebound.</div>
+      <sc-if value="{{ strainUntrackedShow }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; align-items:flex-start; gap:6px; font-size:11.5px; color:var(--text-tertiary); margin-top:8px; padding-top:8px; border-top:1px solid var(--border);">
+          <span style="width:6px; height:6px; border-radius:50%; background:var(--text-tertiary); display:inline-block; flex-shrink:0; margin-top:4px;"></span>
+          <span>{{ strainUntrackedNote }}</span>
+        </div>
+      </sc-if>
+    </div>
+
+    <!-- MUSCLE GROUP VOLUME -->
+    <div style="margin-top:24px;">
+      <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:15px; margin-bottom:10px;">Weekly Volume by Muscle Group</div>
+      <sc-for list="{{ muscleGroups }}" as="mg" hint-placeholder-count="4">
+        <div style="margin-bottom:10px;">
+          <div style="display:flex; justify-content:space-between; font-size:12.5px; color:var(--text-secondary); margin-bottom:4px;">
+            <span>{{ mg.label }}</span><span>{{ mg.value }}</span>
+          </div>
+          <div style="height:5px; background:var(--border); border-radius:4px; overflow:hidden;">
+            <div style="height:100%; width:{{ mg.pct }}%; background:var(--accent);"></div>
+          </div>
+        </div>
+      </sc-for>
+      <div style="font-size:11px; color:var(--text-tertiary); margin-top:4px;">Target: 15–20 sets/muscle group/week (bulk phase).</div>
+    </div>
+
+    <!-- EXERCISE PROGRESSION -->
+    <sc-if value="{{ exercise1.show }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:24px; background:var(--bg-card-alt); border-radius:16px; padding:18px 18px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:15px;">{{ exercise1.name }}</div>
+          <div style="font-size:11.5px; font-weight:700; color:var(--accent-strong);">{{ exercise1.deltaLabel }}</div>
+        </div>
+        <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:22px; margin-bottom:8px;">{{ exercise1.last }}<span style="font-size:12px; color:var(--text-tertiary); font-weight:600; margin-left:2px;">{{ exercise1.unit }}</span></div>
+        <svg viewBox="0 0 280 72" style="width:100%; height:80px; display:block;" preserveAspectRatio="none">
+          <polyline points="0,0 1,0" fill="none" stroke="var(--accent-strong)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+      </div>
+    </sc-if>
+    <sc-if value="{{ exercise2.show }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:14px; background:var(--bg-card-alt); border-radius:16px; padding:18px 18px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:15px;">{{ exercise2.name }}</div>
+          <div style="font-size:11.5px; font-weight:700; color:var(--accent-strong);">{{ exercise2.deltaLabel }}</div>
+        </div>
+        <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:22px; margin-bottom:8px;">{{ exercise2.last }}<span style="font-size:12px; color:var(--text-tertiary); font-weight:600; margin-left:2px;">{{ exercise2.unit }}</span></div>
+        <svg viewBox="0 0 280 72" style="width:100%; height:80px; display:block;" preserveAspectRatio="none">
+          <polyline points="0,0 1,0" fill="none" stroke="var(--accent-strong)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+      </div>
+    </sc-if>
+    <sc-if value="{{ exerciseEmptyShow }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:20px; font-size:12.5px; color:var(--text-tertiary); font-style:italic;">Exercise progression charts unlock once a lift has 2+ logged sessions — none tracked yet.</div>
+    </sc-if>
+  </div>
+
+  <!-- HABIT TRACKER (added 2026-07-22) -->
+  <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-bottom:18px;">
+    <div onClick="{{ toggleHabit }}" style="display:flex; flex-direction:column; gap:6px; padding:14px 18px; cursor:pointer;">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-tertiary);">Habit Tracker</div>
+        <div style="font-size:13px; color:var(--text-secondary); font-weight:700; flex-shrink:0;">{{ habitToggleLabel }}</div>
+      </div>
+      <div style="font-size:12px; color:var(--text-tertiary);">{{ habitSummary }}</div>
+    </div>
+    <sc-if value="{{ habitOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:0 18px 18px; border-top:1px solid var(--border);">
+
+        <!-- Reading -->
+        <div style="margin-top:16px; cursor:pointer;" onClick="{{ toggleReadingChart }}">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:13.5px; font-weight:700;">📖 Reading</div>
+            <div style="font-size:13px; color:var(--text-secondary);">{{ readingTodayLabel }}</div>
+          </div>
+        </div>
+        <sc-if value="{{ readingChartOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:8px; background:var(--bg-card-alt); border-radius:14px; padding:14px 16px;">
+            <div style="font-size:11px; color:var(--text-tertiary); margin-bottom:6px;">Minutes/day, last 14 days</div>
+            <svg viewBox="0 0 280 72" style="width:100%; height:70px; display:block;" preserveAspectRatio="none">
+              <path d="M6.0,66 L6.0,66.0 L26.6,66.0 L47.2,66.0 L67.8,66.0 L88.5,66.0 L109.1,66.0 L129.7,66.0 L150.3,66.0 L170.9,66.0 L191.5,66.0 L212.2,66.0 L232.8,66.0 L253.4,66.0 L274.0,66.0 L274.0,66 Z" fill="var(--accent)" opacity="0.14"></path>
+              <polyline points="6.0,66.0 26.6,66.0 47.2,66.0 67.8,66.0 88.5,66.0 109.1,66.0 129.7,66.0 150.3,66.0 170.9,66.0 191.5,66.0 212.2,66.0 232.8,66.0 253.4,66.0 274.0,66.0" fill="none" stroke="var(--accent-strong)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </svg>
+          </div>
+        </sc-if>
+
+        <!-- Phone time -->
+        <div style="margin-top:16px; cursor:pointer;" onClick="{{ togglePhoneChart }}">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:13.5px; font-weight:700;">📵 Phone Time</div>
+            <div style="font-size:13px; color:var(--text-secondary);">{{ phoneTodayLabel }}</div>
+          </div>
+          <div style="font-size:10.5px; color:var(--text-tertiary); margin-top:2px;">{{ phoneSourceLabel }}</div>
+        </div>
+        <sc-if value="{{ phoneChartOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:8px; background:var(--bg-card-alt); border-radius:14px; padding:14px 16px;">
+            <div style="font-size:11px; color:var(--text-tertiary); margin-bottom:6px;">Minutes/day, last 14 days</div>
+            <svg viewBox="0 0 280 72" style="width:100%; height:70px; display:block;" preserveAspectRatio="none">
+              <path d="M6.0,66 L6.0,66.0 L26.6,66.0 L47.2,66.0 L67.8,66.0 L88.5,66.0 L109.1,66.0 L129.7,66.0 L150.3,66.0 L170.9,66.0 L191.5,66.0 L212.2,66.0 L232.8,66.0 L253.4,66.0 L274.0,66.0 L274.0,66 Z" fill="var(--warn)" opacity="0.14"></path>
+              <polyline points="6.0,66.0 26.6,66.0 47.2,66.0 67.8,66.0 88.5,66.0 109.1,66.0 129.7,66.0 150.3,66.0 170.9,66.0 191.5,66.0 212.2,66.0 232.8,66.0 253.4,66.0 274.0,66.0" fill="none" stroke="var(--warn)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </svg>
+          </div>
+        </sc-if>
+
+        <!-- MMA intensity -->
+        <sc-if value="{{ mmaShow }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:16px; cursor:pointer;" onClick="{{ toggleMmaChart }}">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div style="font-size:13.5px; font-weight:700;">🥊 MMA Intensity</div>
+              <div style="font-size:13px; color:var(--text-secondary);">{{ mmaLastLabel }}</div>
+            </div>
+          </div>
+          <sc-if value="{{ mmaChartOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:8px; background:var(--bg-card-alt); border-radius:14px; padding:14px 16px;">
+              <div style="font-size:11px; color:var(--text-tertiary); margin-bottom:6px;">Self-rated 1–5, last logged sessions</div>
+              <svg viewBox="0 0 280 72" style="width:100%; height:70px; display:block;" preserveAspectRatio="none">
+                <polyline points="0,0 1,0" fill="none" stroke="var(--accent-strong)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg>
+            </div>
+          </sc-if>
+        </sc-if>
+        <sc-if value="{{ mmaEmptyShow }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:16px; font-size:12px; color:var(--text-tertiary); font-style:italic;">🥊 MMA Intensity — unlocks once 2+ sessions have a rating logged.</div>
+        </sc-if>
+
+        <!-- Next-day prep -->
+        <div style="margin-top:18px; cursor:pointer;" onClick="{{ togglePrepChart }}">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:13.5px; font-weight:700;">🗂️ Next-Day Prep</div>
+            <div style="font-size:13px; color:var(--text-secondary);">{{ prepAdherenceLabel }}</div>
+          </div>
+        </div>
+        <sc-if value="{{ prepChartOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+            <sc-for list="{{ prepMarks }}" as="p" hint-placeholder-count="14">
+              <div style="width:24px; height:24px; border-radius:50%; background:{{ p.bg }}; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:{{ p.fg }};">{{ p.mark }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <!-- Second Brain opened -->
+        <div style="margin-top:18px; cursor:pointer;" onClick="{{ toggleBrainChart }}">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:13.5px; font-weight:700;">🧠 Second Brain Opened</div>
+            <div style="font-size:13px; color:var(--text-secondary);">{{ brainAdherenceLabel }}</div>
+          </div>
+        </div>
+        <sc-if value="{{ brainChartOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;">
+            <sc-for list="{{ brainMarks }}" as="b" hint-placeholder-count="14">
+              <div style="width:24px; height:24px; border-radius:50%; background:{{ b.bg }}; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:{{ b.fg }};">{{ b.mark }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+      </div>
+    </sc-if>
   </div>
 
   <!-- COGNITIVE DEV -->
@@ -2546,7 +2756,11 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844},&quot;palette&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;sand&quot;,&quot;options&quot;:[&quot;paper&quot;,&quot;sand&quot;,&quot;stone&quot;,&quot;terracotta&quot;,&quot;espresso&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Appearance&quot;}}">
 class Component extends DCLogic {
-  state = { nutritionOpen: false, cognitiveOpen: false, calendarOpen: false };
+  state = {
+    nutritionOpen: false, cognitiveOpen: false, calendarOpen: false,
+    habitOpen: false, readingChartOpen: false, phoneChartOpen: false,
+    mmaChartOpen: false, prepChartOpen: false, brainChartOpen: false
+  };
 
   toggleCognitive() {
     this.setState(s => ({ cognitiveOpen: !s.cognitiveOpen }));
@@ -2556,11 +2770,18 @@ class Component extends DCLogic {
     this.setState(s => ({ calendarOpen: !s.calendarOpen }));
   }
 
-  sleepHours = [2.31, 10.99, 6.58, 7.27, 9.4, 9.23, 7.68, 6.68, 7.46, 9.63, 7.59, 6.79, 4.47, 8.37];
-  bedtimeArr = [25.87, 25.3, 28.2, 27.86, 23.79, 22.23, 24.84, 24.71, 27.24, 24.4, 24.83, 25.63, 25.18, 24.35];
-  hrvArr = [103.4, 104.5, 83.2, 58.3, 95.5, 94.5, 77.9, 87.5, 90.4, 70.6, 108.1, 75.2, 47.2, 95.0];
-  rhrArr = [53, 53, 54, 62, 56, 56, 56, 55, 55, 62, 53, 57, 63, 53];
-  respArr = [14.4, 14.2, 14.4, 15.3, 14.6, 14.4, 14.3, 14.5, 14.1, 14.4, 14.1, 13.9, 14.6, 13.5];
+  toggleHabit() { this.setState(s => ({ habitOpen: !s.habitOpen })); }
+  toggleReadingChart() { this.setState(s => ({ readingChartOpen: !s.readingChartOpen })); }
+  togglePhoneChart() { this.setState(s => ({ phoneChartOpen: !s.phoneChartOpen })); }
+  toggleMmaChart() { this.setState(s => ({ mmaChartOpen: !s.mmaChartOpen })); }
+  togglePrepChart() { this.setState(s => ({ prepChartOpen: !s.prepChartOpen })); }
+  toggleBrainChart() { this.setState(s => ({ brainChartOpen: !s.brainChartOpen })); }
+
+  sleepHours = [10.99, 6.58, 7.27, 9.4, 9.23, 7.68, 6.68, 7.46, 9.63, 7.59, 6.79, 4.47, 8.37, 8.38];
+  bedtimeArr = [25.28, 28.2, 27.85, 23.78, 22.23, 24.83, 24.7, 27.23, 24.4, 24.82, 25.62, 25.17, 24.33, 24.32];
+  hrvArr = [104.46955, 83.23423, 58.257954, 95.53368, 94.486664, 77.94904, 87.53556, 90.354904, 70.607346, 108.123856, 75.23236, 47.20493, 95.011505, 57.27749];
+  rhrArr = [53, 54, 62, 56, 56, 56, 55, 55, 62, 53, 57, 63, 53, 60];
+  respArr = [14.238281, 14.355469, 15.300293, 14.633789, 14.4140625, 14.25293, 14.487305, 14.0625, 14.384766, 14.121094, 13.886719, 14.589844, 13.549805, 14.765625];
 
   toggleNutrition() {
     this.setState(s => ({ nutritionOpen: !s.nutritionOpen }));
@@ -2639,10 +2860,10 @@ class Component extends DCLogic {
     const palette = this.props.palette || 'paper';
 
     const metrics = [
-      this.buildMetric('Sleep Duration', 'h', this.sleepHours, 1, "Declining", "good", "Weekly average slipped from 7.6h to 7.3h, still above the 7h floor. Last reading (Jul 16) was a solid 8.4h, but the whole trend is 6 days stale."),
-      this.buildMetric('HRV', 'ms', this.hrvArr, 1, "Declining", "warn", "HRV weekly average fell from 88.2ms to 82.0ms. Last reading (Jul 16, 95.0ms) was actually a strong bounce-back from the Jul 15 low of 47.2ms — but there's no data since to confirm where it's settled."),
-      this.buildMetric('Resting HR', 'bpm', this.rhrArr, 0, "Rising", "warn", "Resting heart rate weekly average crept up from 55.7bpm to 56.9bpm. Last reading (Jul 16) was 53bpm, the best of the window — again, 6 days without confirmation."),
-      this.buildMetric('Resp. Rate', 'rpm', this.respArr, 1, "Stable", "good", "Respiratory rate is essentially flat (14.5 to 14.2 rpm) in the available data, no illness signal. Last reading Jul 16.")
+      this.buildMetric('Sleep Duration', 'h', this.sleepHours, 1, "Declining", "good", "Average sleep duration slipped from 8.26h to 7.53h over the 14-day window, with last night's reading at 8.4h. Still above the 7h floor on average, so this is a soft trend to watch rather than an acute problem."),
+      this.buildMetric('HRV', 'ms', this.hrvArr, 1, "Declining", "warn", "HRV fell from an 85.9ms to 77.7ms weekly average (about 9.6% down), with last night's reading at 57.3ms — the lowest of the window. Consistent with the adequate-but-not-optimal recovery score."),
+      this.buildMetric('Resting HR', 'bpm', this.rhrArr, 0, "Rising", "warn", "Resting heart rate crept up from a 56.0bpm to 57.6bpm weekly average (about 2.8%), with last night's reading at 60bpm — a mild signal alongside the HRV dip, not a large one."),
+      this.buildMetric('Resp. Rate', 'rpm', this.respArr, 1, "Stable", "good", "Respiratory rate is essentially flat (14.5 to 14.2 rpm), showing no signs of illness despite the softer recovery, HRV, and sleep trend.")
     ];
 
     const bedtime = this.sparkline(this.bedtimeArr, 280, 72, 6);
@@ -2657,7 +2878,24 @@ class Component extends DCLogic {
       fg: t === 'MMA' ? 'var(--accent-strong)' : 'var(--text-tertiary)'
     }));
 
-    const studyMarks = ["×", "×", "×", "×", "×", "×", "×"];
+    // 8-14 days ago (added for the 14-day training strip, 2026-07-22)
+    const trainingTypesPrev = ["Rest", "Rest", "Rest", "Rest", "MMA", "MMA", "Rest"];
+    const trainingDatesPrev = ["2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15"];
+    const dowsPrev = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
+    const trainingWeekPrev = trainingTypesPrev.map((t, i) => ({
+      dow: dowsPrev[i], date: trainingDatesPrev[i], tag: t,
+      bg: t === 'MMA' ? 'var(--accent-soft)' : 'var(--bg-card)',
+      fg: t === 'MMA' ? 'var(--accent-strong)' : 'var(--text-tertiary)'
+    }));
+
+    // Exercise progression cards (added 2026-07-22) — up to 2 tracked lifts.
+    // EX1_LINE/EX2_LINE are baked markup-level tokens (same SVG-attribute-binding
+    // constraint as M1-M4/VOLUME/STRAIN charts above) — only the show/name/unit/last/delta
+    // fields below are safe to bind via {{ }} since they're plain text, not SVG geometry.
+    const ex1Show = false;
+    const ex2Show = false;
+
+    const studyMarks = ["", "×", "×", "×", "×", "×", "×"];
     const studyWeek = studyMarks.map(m => ({
       mark: m === '×' ? m : '',
       isDone: m === '✓',
@@ -2665,23 +2903,39 @@ class Component extends DCLogic {
       fg: m === '✓' ? 'var(--good)' : m === '×' ? 'var(--danger)' : 'var(--text-tertiary)'
     }));
 
+    // Habit tracker (added 2026-07-22). Boolean streaks reuse the studyWeek '✓'/'×'/'' pattern,
+    // just 14 long instead of 7 (no SVG-binding concern — these are text-node/mixed-attribute
+    // bindings, not whole-value SVG geometry, so unlike the charts below they're safe to compute
+    // here client-side rather than baking).
+    const mkMarks = (marks) => marks.map(m => ({
+      mark: m === '×' ? m : (m === '✓' ? '✓' : ''),
+      bg: m === '✓' ? 'var(--good-soft)' : m === '×' ? 'var(--danger-soft)' : 'var(--bg-card-alt)',
+      fg: m === '✓' ? 'var(--good)' : m === '×' ? 'var(--danger)' : 'var(--text-tertiary)'
+    }));
+    const prepMarks = mkMarks(["", "", "", "", "", "", "", "", "", "", "", "", "", ""]);
+    const brainMarks = mkMarks(["", "", "", "", "", "", "", "", "", "", "", "", "", ""]);
+    const mmaShow = false;
+
     const events = {"1": [{"label": "Task D: FoK Transition", "bg": "var(--danger-soft)", "fg": "var(--danger)"}, {"label": "Task F: Digital Hygiene", "bg": "var(--danger-soft)", "fg": "var(--danger)"}], "2": [{"label": "Legs", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "4": [{"label": "Fix Whoop sync bug", "bg": "var(--danger-soft)", "fg": "var(--danger)"}], "6": [{"label": "Push", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}, {"label": "MMA", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}, {"label": "Checkpoint 1", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "13": [{"label": "MMA", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "14": [{"label": "MMA", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "16": [{"label": "Checkpoint 2: Synthesis", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "20": [{"label": "Checkpoint 3", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "21": [{"label": "MMA", "bg": "var(--accent-soft)", "fg": "var(--accent-strong)"}], "29": [{"label": "Checkpoint 4: Draft", "bg": "var(--warn-soft)", "fg": "var(--warn)"}], "31": [{"label": "Essay Deadline", "bg": "var(--warn-soft)", "fg": "var(--warn)"}]};
     const calendarCells = this.buildMonthGrid(2026, 6, events);
 
     return {
       palette,
       dateLabel: "Wednesday · 22 Jul 2026",
-      focusStatement: "Whoop hasn't synced in 6 days and nutrition logging has been dark for 16 — fix the sync and log tonight's food before anything else; then use any spare time today to start closing the three overdue FoK checkpoints (9 days left to the essay deadline).",
-      cycleDate: "2026-07-16",
-      syncStatus: "Stale — 2026-07-16",
-      recoveryScore: "84",
-      recoveryAngle: "84" * 3.6,
-      recoveryStatusLabel: "OPTIMAL",
+      focusStatement: "Nutrition has been dark for 16 days and study for 8 — pick one of the two to fix today, and use tonight's night_input.md to write the first Habit Tracker entry. Recovery (41) is adequate, not a reason to rest, so normal training load is fine today.",
+      cycleDate: "2026-07-21",
+      syncStatus: "Live sync",
+      whoopAlertShow: true,
+      whoopAlertTitle: "WHOOP DATA GAP (JUL 17–20)",
+      whoopAlertText: "Recovery and sleep didn't sync for 4 days (Jul 17–20). Data resumed yesterday (Jul 21: recovery 41, sleep 86%) and today's file is present, so the pipeline itself looks healthy again — but the gap means the 14-day trend below spans nearly a month of real dates rather than 14 consecutive days.",
+      recoveryScore: "41",
+      recoveryAngle: "41" * 3.6,
+      recoveryStatusLabel: "ADEQUATE",
       recoveryFlag: {
-        show: true,
-        label: "STALE DATA — 6 DAYS",
-        text: "Whoop hasn't synced since 2026-07-16 — this recovery score (84) and every vitals reading below are 6 days old, not today's. Don't treat this as a green light to train hard; verify how you actually feel before deciding. Macro targets below use the GREEN band by default: 2650 kcal / 155g protein / 345g carbs / 72g fat.",
-        ...this.severityColors("warn")
+        show: false,
+        label: "",
+        text: "",
+        ...this.severityColors("good")
       },
       metrics,
       bedtimeLine: bedtime.line,
@@ -2690,27 +2944,62 @@ class Component extends DCLogic {
       bedtimeFirst: this.formatBedtime(this.bedtimeArr[0]),
       bedtimeTrendWord: "Improving",
       bedtimeTrendColor,
-      bedtimeAnalysis: "Bedtime pulled about 1h30m earlier across the window (1:52am Jun 22 to 12:21am Jul 16). Positive direction, but unconfirmed for the last 6 nights.",
-      sleepRecommendation: "The last confirmed readings (Jul 16) actually look decent — 8.4h sleep, HRV bouncing back to 95ms, RHR down to 53bpm, bedtime trending earlier. But six days without a sync means none of this can be trusted for today. Priority one is getting the Whoop syncing again so tonight's numbers are real; until then, go by how the body actually feels rather than this dashboard.",
+      bedtimeAnalysis: "Bedtime pulled earlier by roughly 58 minutes over the 14-day window (1:17AM to 12:19AM). The direction is positive; protecting it matters more than the recovery dip right now.",
+      sleepRecommendation: "Sleep, HRV, and RHR are all softening slightly over the 14-day window — nothing acute, but worth watching. Bedtime has pulled about an hour earlier, which is a good counterweight; protect that rather than letting a late night erase the gain.",
       lastSessionTitle: "Last: 2026-07-21 — MMA (Muay Thai sparring)",
-      trainingNote: "MMA/Muay Thai has been the consistent thread this week (Jul 13, 14, 21) while lifting has gone quiet since Jul 6 — 16 days. Yesterday's sparring notes flagged trouble in kicking range against the teep; worth a deliberate drilling focus next MMA session. Consider fitting a lifting session back in this week to avoid losing strength work entirely to MMA-only volume.",
+      trainingNote: "Recovery is adequate (41) — normal training load is fine today. MMA/Muay Thai has been the consistent thread (Jul 6, 13, 14, 21), but formal lifting has been silent since Jul 6 (16 days) and this week's set volume is still 0 — a lifting session would close that gap without conflicting with recovery.",
       weekSessions: "1",
       weekSets: "0",
-      avgStrain: "—",
+      avgStrain: "6.4",
+      strainUntrackedShow: true,
+      strainUntrackedWeekCount: "1",
+      strainUntrackedNote: "3 of the last 14 days had MMA/Muay Thai training Whoop didn't capture (not worn during combat) — those points are undercounted and excluded from the weekly average above.",
       trainingWeek,
+      trainingWeekPrev,
+      volumeLast: "0",
+      volumeDeltaLabel: "0",
+      volumeWeeksLabel: "10-week trend",
+      muscleGroups: [{"label": "Push", "value": "0 / 15–20", "pct": 0}, {"label": "Pull", "value": "0 / 15–20", "pct": 0}, {"label": "Legs", "value": "0 / 15–20", "pct": 0}, {"label": "Core", "value": "0 / 15–20", "pct": 0}],
+      exercise1: { show: ex1Show, name: "", unit: "", last: "", deltaLabel: "" },
+      exercise2: { show: ex2Show, name: "", unit: "", last: "", deltaLabel: "" },
+      exerciseEmptyShow: !ex1Show && !ex2Show,
+      habitOpen: this.state.habitOpen,
+      toggleHabit: () => this.toggleHabit(),
+      habitToggleLabel: this.state.habitOpen ? '▾ Collapse' : '▸ Expand',
+      habitSummary: "No entries yet — first night to log is tonight",
+      readingChartOpen: this.state.readingChartOpen,
+      toggleReadingChart: () => this.toggleReadingChart(),
+      readingTodayLabel: "Not logged",
+      phoneChartOpen: this.state.phoneChartOpen,
+      togglePhoneChart: () => this.togglePhoneChart(),
+      phoneTodayLabel: "Not logged",
+      phoneSourceLabel: "Not logged",
+      mmaChartOpen: this.state.mmaChartOpen,
+      toggleMmaChart: () => this.toggleMmaChart(),
+      mmaShow,
+      mmaEmptyShow: !mmaShow,
+      mmaLastLabel: "",
+      prepChartOpen: this.state.prepChartOpen,
+      togglePrepChart: () => this.togglePrepChart(),
+      prepAdherenceLabel: "Not logged yet",
+      prepMarks,
+      brainChartOpen: this.state.brainChartOpen,
+      toggleBrainChart: () => this.toggleBrainChart(),
+      brainAdherenceLabel: "Not logged yet",
+      brainMarks,
       cogTitle: "The Fighter's Mind",
       cogDaysLeft: "9",
       cogHoursLogged: "5.0 / 15h",
       cogProgressPct: "33",
       cogCheckpoints: [
-        this.buildCheckpoint("Checkpoint 1 — Overdue", "Second Brain vault + 7-theme MOC seeded, due 2026-07-06 — still marked In Progress, 16 days overdue.", "danger", true),
-        this.buildCheckpoint("Checkpoint 2 — Overdue", "Mid-month synthesis pass (themes mapped, essay spine identified), due 2026-07-16 — not yet started, 6 days overdue.", "danger", true)
+        this.buildCheckpoint("Checkpoint 1", "Second Brain vault + 7-theme MOC seeded, target was 2026-07-06 — still marked In Progress. No pressure, pick it up whenever it clicks.", "good", true),
+        this.buildCheckpoint("Checkpoint 2", "Mid-month synthesis pass (themes mapped, essay spine identified), target was 2026-07-16 — not yet started. No pressure, revisit when ready.", "good", true)
       ],
-      cogSummary1: "Only two study sessions logged all month: 3h of Second Brain/FoK setup (Jul 3) and 2h reading GSP's The Way of the Fight (Jul 14). That's 5 of the 15-hour July target, with 9 days left until the essay deadline and no session logged in 8 days.",
-      cogSummary2: "Three of the four planned sources (Musashi, Marcus Aurelius/Holiday, neurobiology research) are untouched. All three checkpoints due so far (Jul 6, 16, 20) are overdue with nothing completed — essay drafting is due in 7 days with the essay itself not started.",
-      cogFocusPoints: ["Log a study session today — 8 days since the last one (Jul 14), 9 days left to the essay deadline.", "Close the badly overdue Checkpoint 1 (Second Brain MOC, 16 days late) and Checkpoint 2 (mid-month synthesis, 6 days late).", "Engage at least one untouched source — Musashi or Marcus Aurelius/Holiday — three of four sources still haven't been opened."],
+      cogSummary1: "Two study sessions logged in July so far: a 3-hour Second Brain/FoK setup session on Jul 3 (touching neuroplasticity, theme 5) and a 2-hour read-through of GSP's The Way of the Fight on Jul 14. That's 5 of the 15-hour July target, with 9 days left to the essay deadline.",
+      cogSummary2: "Study has been quiet for 8 days (last session Jul 14) while training picked back up. Musashi, Marcus Aurelius/Holiday, and the neurobiology research are all still untouched — 2 of 4 sources engaged so far, and Checkpoints 1-2 are both past their reference dates without that being a scored problem (informational only now).",
+      cogFocusPoints: ["Pick one FoK source (Musashi or Marcus Aurelius/Holiday) and log even a short session today — 8 days is the longest study gap this month.", "Confirm the Second Brain MOC is actually seeded with all 7 themes to move Checkpoint 1 along.", "With 9 days left and 10 hours still needed, roughly 70 min/day gets the 15h target back on pace."],
       studyWeek,
-      crossStrand: [{"n": "01", "text": "Whoop hasn't synced in 6 days (last data point Jul 16) — recovery, HRV, sleep, and RHR shown today are all stale. Get the sync working today before trusting any recovery-driven training call."}, {"n": "02", "text": "Nutrition logging has been dark for 16 days (last entry Jul 6) — the system's biggest blind spot right now. Log tonight's intake so tomorrow's macro targets have real data behind them."}, {"n": "03", "text": "Cognitive Dev has stalled for 8 days (last session Jul 14) with Checkpoints 1–3 all overdue and 9 days left to the essay deadline — carve out a study block today."}, {"n": "04", "text": "MMA/Muay Thai is running consistently (Jul 13, 14, 21) while lifting has been silent since Jul 6 — worth fitting a strength session back in this week."}],
+      crossStrand: [{"n": "01", "text": "Whoop had a real 4-day data gap (Jul 17–20) that resumed yesterday (recovery 41, sleep 86%) — not a live emergency, but confirm the Whoop is charged and worn consistently today so the pipeline doesn't lapse again."}, {"n": "02", "text": "Nutrition logging has been dark for 16 straight days (last entry Jul 6) — still the system's single biggest blind spot. Log tonight's intake via night_input.md so tomorrow's AMBER-band macro targets (2,450 kcal / 145g protein) have real data behind them."}, {"n": "03", "text": "MMA/Muay Thai training is the one strand running consistently (Jul 6, 13, 14, 21) while formal lifting has been silent for 16 days (since Jul 6) and this week's set volume is still 0 — worth fitting a strength session back in alongside combat work."}, {"n": "04", "text": "The Habit Tracker went live today with zero entries yet — tonight's night_input.md is the first real chance to start the reading/phone-time/MMA-intensity/prep/Second-Brain streaks."}],
       monthLabel: "July 2026",
       weekdayLabels: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
       calendarCells,
@@ -2724,10 +3013,10 @@ class Component extends DCLogic {
       toggleCalendar: () => this.toggleCalendar(),
       calendarToggleLabel: this.state.calendarOpen ? '▾ Collapse' : '▸ Expand',
       nutritionToggleLabel: this.state.nutritionOpen ? '▾ Collapse' : '▸ Expand',
-      nutritionSummary: "0/155g protein · 0/2650 kcal logged yesterday",
-      nutritionTargets: [{"label": "Protein", "value": "0 / 155 g", "pct": 0}, {"label": "Carbohydrates", "value": "0 / 345 g", "pct": 0}, {"label": "Calories", "value": "0 / 2650 kcal", "pct": 0}],
+      nutritionSummary: "0/145g protein · 0/2450 kcal logged yesterday",
+      nutritionTargets: [{"label": "Protein", "value": "0 / 145 g", "pct": 0}, {"label": "Carbohydrates", "value": "0 / 310 g", "pct": 0}, {"label": "Calories", "value": "0 / 2450 kcal", "pct": 0}],
       supplements: [{"name": "Creatine", "status": "⬜ Not logged"}, {"name": "Zinc", "status": "✅ Taken"}, {"name": "Omega-3", "status": "⬜ Not logged"}, {"name": "B12", "status": "✅ Taken"}],
-      footerLine: "Generated Wednesday 22 Jul · 09:16 local · Last Task B: 2026-07-21 (not yet run for last night — processes before 07:40 local) · Last journal: Today was a mixed bag — spent the majority of the day doing basically useless shit, but"
+      footerLine: "Generated Wednesday 22 Jul · 18:06 local (UTC+4) · Last Task B: 2026-07-21 · Last journal (Jul 21): \"Today was a mixed bag — spent the majority of the day doing basically useless sh\""
     };
   }
 }
